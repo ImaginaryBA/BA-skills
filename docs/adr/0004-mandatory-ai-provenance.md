@@ -1,3 +1,3 @@
-# Every output carries an AI provenance label
+# Every output carries an AI provenance label, per item
 
-Every artifact a skill produces states whether it was AI-generated or AI-assisted, and the label survives publication into the enterprise tool. This is an enterprise accountability requirement, not a style choice: skills must never emit an unlabelled artifact.
+Every item a skill produces (a requirement, a finding, a SWOT entry) is labelled AI-generated or AI-assisted, with the reviewer's name and date recorded separately, because a label never means approval. This is an enterprise transparency and accountability requirement. Only the BA can move an item from AI-generated to AI-assisted, by confirming they substantively rewrote it; skills never change a label on their own. The label appears in item metadata, in a visible footer on stakeholder-facing documents, and as a Confluence label on publication.
