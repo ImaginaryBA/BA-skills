@@ -1,0 +1,3 @@
+# Author in Claude Code; BAs run skills in Claude desktop/Cowork or an enterprise Copilot/other LLM
+
+Skills are written and evaluated in Claude Code, but BAs will run them in a mix of runtimes: Claude desktop/Cowork, or an enterprise-mandated Copilot or other LLM. So skills must be portable: no skill may rely on git, a shell, command-line tools, Claude-only features (hooks, subagents, Claude-specific tool names), or a harness enforcing behaviour. Every rule a skill must follow, including the AI provenance label, is written in the skill's own instructions and output templates. The minimum guarantee is a plain folder of markdown files plus a chat model that can read them.

@@ -32,6 +32,10 @@ Metadata on a skill naming the knowledge area, task(s) and technique(s) it suppo
 **Router**:
 The skill (`ask-ba`) that maps a BA's described situation to the right skill or chain of skills.
 
+**Runtime**:
+The AI tool a BA runs skills in: Claude Code (authoring), Claude desktop/Cowork, or an enterprise Copilot/other LLM. Skills must work in all of them.
+_Avoid_: Platform, harness
+
 ### Accountability
 
 **AI provenance label**:
