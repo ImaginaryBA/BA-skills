@@ -42,13 +42,16 @@ The workspace file of a requirement set after publication, kept for history and 
 A version of a requirement set generated for pasting into Confluence: a page-properties block, item tables and the provenance footer, with no raw metadata.
 
 **Delivery story**:
-A Jira story drafted by the BA from one or more requirements, linking back to their requirement IDs. It is a delivery artifact, not a requirement.
+A Jira story drafted by the BA from one or more validated (or later) requirements, linking back to their requirement IDs. It is a delivery artifact, never the only home of a requirement.
+
+**Story set**:
+The workspace file holding the delivery stories for one epic or feature, each with a temporary ID (e.g. `CLM-ST-007`) until its Jira key is recorded.
 _Avoid_: Ticket, Jira requirement
 
 ### Requirement lifecycle
 
 **Lifecycle status**:
-Where a requirement is in its life: draft, verified, validated, approved, published, retired or superseded. The BA tracks it in the workspace; after publication, Confluence has the final say.
+Where a requirement is in its life, in order: draft, verified, validated, published, approved, then retired or superseded. The BA tracks it in the workspace up to published; from then on Confluence has the final say.
 
 **Verified**:
 The requirement passes the quality checks (well-formed, unambiguous, testable and so on). A skill may propose it; the BA confirms.
@@ -57,8 +60,11 @@ _Avoid_: Reviewed, checked
 **Validated**:
 Named stakeholders confirmed the requirement meets their need. Only the BA sets it.
 
+**Published**:
+The requirement's set is on Confluence awaiting approval. The workspace copy is frozen from this point.
+
 **Approved**:
-A named approver from the stakeholder register signed the requirement off on a recorded date. Never set by a skill.
+A named approver from the stakeholder register signed the requirement off in Confluence on a recorded date. Never set by a skill.
 _Avoid_: Signed off, accepted
 
 **Superseded**:
