@@ -1,167 +1,102 @@
 # BA-skills: plan
 
-A BABOK-aligned library of agent skills for business analysis work, built the way mattpocock-skills is built: small, composable `SKILL.md` files, a router on top, a few shared primitives, and markdown files in the repo that keep state between sessions.
+A BABOK-aligned library of portable agent skills for business analysis, in the style of mattpocock-skills: small `SKILL.md` files, a router on top, shared primitives, and markdown files that keep state between sessions.
 
-Status: **draft for planning**. The open decisions are in §7.
+- Vocabulary: [`CONTEXT.md`](CONTEXT.md). Its terms are used in this plan exactly as defined there.
+- Decisions: [`docs/adr/`](docs/adr). Each one is referenced below as (ADR-nnnn).
+
+Status: **design agreed through the grilling session; ready to build Phase 1.**
 
 ---
 
 ## 1. Goals
 
-| Goal | How we'll know |
+| Goal | Measure |
 |---|---|
-| Spend less time on routine BA artifacts | Time per artifact (interview pack, story set, SWOT, etc.) against a baseline we measure first |
-| Produce better artifacts | Defects found in peer review or stakeholder validation, per artifact |
-| Make work traceable and reusable | Share of requirements with trace links, and how many reused requirements or models each initiative uses |
-| Get other BAs in the program using it | Number of BAs using the skills each week, plus their feedback |
+| Less time on routine BA artifacts | Time per artifact compared with a baseline taken in Phase 0 |
+| Better artifacts | Defects found in peer review and stakeholder validation |
+| Transparent, accountable AI use | 100% of items carry an AI provenance label and a reviewer |
+| Traceability and reuse | Share of items with trace links; number of items reused from frozen copies |
+| Adoption by the pilot group (2–5 BAs) | Weekly use and feedback, in at least two runtimes |
 
-Non-goals for now: replacing stakeholder conversations, making approval decisions, or integrating with an enterprise tool (Jira/ADO/Confluence) before the markdown workflow has proven itself.
+Non-goals for the first version: direct Confluence or Jira integration, per-runtime adapters, and any AI involvement after publication.
 
----
+## 2. Constraints that shape everything
 
-## 2. Design principles (borrowed from mattpocock-skills)
+- **Portable.** Skills are authored in Claude Code. BAs may run them in Codex, Antigravity, Open WebUI or other LLM tools. So skills must not use git, a shell, hooks or features specific to one vendor. Every rule a skill follows is written into the skill text itself. (ADR-0001)
+- **Two support levels.** Agentic runtimes read and write the workspace themselves. In chat runtimes, the BA attaches the skill and its inputs, then saves what it outputs. That's why every skill declares its inputs and outputs explicitly. (ADR-0005)
+- **English only**, the company's official language.
+- **Data.** Each workspace declares its data classification. Personal names get replaced with roles. Customer and production data are never used. Only local models may process Confluence content. (ADR-0006)
+- **Provenance.** Every item is labelled AI-generated or AI-assisted, and the reviewer and date are recorded separately. Only the BA can downgrade a label from generated to assisted. The footer also records skill, version and runtime. (ADR-0004)
+- **Named by situation.** Skills are named after what the BA is trying to do, and their BABOK reference sits in metadata. (ADR-0003)
 
-1. **One skill, one job.** Each skill is a single `SKILL.md`, under about 150 lines, with optional reference files next to it. A skill that keeps growing gets split.
-2. **The description is the trigger.** The frontmatter `description` says *when* to use the skill in a BA's words ("prepare for a stakeholder interview"), not BABOK's words.
-3. **Primitives under workflows.** A few shared skills (interviewing the user, checking requirement quality, traceability) are called by many others, so nothing gets duplicated.
-4. **The repo holds the state.** Every initiative gets a workspace of markdown files: glossary, stakeholder register, requirements, decisions. Skills read and write those files, so work carries over across sessions and between people.
-5. **A human approves.** Skills draft, challenge and check. The BA and the stakeholders validate and approve. Every output marks assumptions and open questions explicitly.
-6. **A router at the top.** `ask-ba` maps "here's my situation" to the right skill or chain of skills, the way `ask-matt` does.
+## 3. Information model
 
----
-
-## 3. Architecture: map BABOK's own structure
-
-In BABOK, **tasks** (grouped into 6 knowledge areas) *use* **techniques** (50 of them). The skill library uses the same split:
-
-```
-                ┌───────────────────────────┐
-                │  ask-ba (router)          │
-                └─────────────┬─────────────┘
-          ┌───────────────────┼────────────────────┐
-  Knowledge-area skills  (WHAT to do: BABOK tasks as workflows)
-          │  plan · elicit · manage lifecycle · strategy · RADD · evaluate
-          ▼
-  Technique skills       (HOW: SWOT, Porter, use cases, user stories, interviews, ...)
-          ▼
-  Primitives             (grill-stakeholder, req-quality-check, trace, glossary)
-          ▼
-  Workspace files        (CONTEXT.md, stakeholders.md, requirements/, decisions/)
-```
-
-- **Knowledge-area skills** take the BABOK task's inputs and outputs, pick suitable techniques, and hand off to them.
-- **Technique skills** are self-contained. A BA can call `swot` directly without going through Strategy Analysis.
-- **Perspectives** (Agile, BI, IT, Business Architecture, BPM) are *not* separate skills. They're short reference files that knowledge-area skills load to adjust their output, e.g. user stories plus acceptance criteria in Agile and use cases in a waterfall IT project.
-
-### Proposed repo layout
-
-```
-skills/
-  ask-ba/                      # router
-  setup-ba-workspace/          # one-off: create workspace files for an initiative
-  primitives/
-    grill-stakeholder/         # structured questioning (BA version of "grilling")
-    req-quality-check/         # BABOK quality characteristics: atomic, complete, consistent, concise, feasible, unambiguous, testable, prioritized, understandable
-    trace/                     # add, query and validate trace links
-    glossary/                  # maintain CONTEXT.md terms
-  planning/                    # KA 3: approach, stakeholder engagement, governance, info mgmt, performance
-  elicitation/                 # KA 4: prepare, conduct, confirm, communicate, collaborate
-  lifecycle/                   # KA 5: trace, maintain/reuse, prioritize, assess changes, approve
-  strategy/                    # KA 6: current state, future state, risks, change strategy
-  radd/                        # KA 7: specify/model, verify, validate, architecture, design options, value
-  evaluation/                  # KA 8: measure performance, analyse, limitations, recommend
-techniques/
-  interviews/ workshops/ brainstorming/ survey-questionnaire/ focus-groups/ observation/
-  swot/ porter-five-forces/ pestle/ business-model-canvas/ root-cause/ benchmarking/
-  user-stories/ use-cases-scenarios/ acceptance-criteria/ process-modelling/ data-modelling/
-  business-rules/ decision-modelling/ prioritization/ business-case/ risk-analysis/ ...
-perspectives/                  # agile.md, bi.md, it.md, business-architecture.md, bpm.md
-templates/                     # output templates the skills fill in
-evals/                         # test prompts + expected properties for each skill
-workspace-example/             # a sample initiative showing the file conventions
-```
-
-### Workspace conventions (decide these early, everything depends on them)
+**Where things live.** Each initiative has a workspace: a folder on a synced company drive (OneDrive/SharePoint). This GitHub repo holds only the skill library. Initiative content never goes in it.
 
 ```
 <initiative>/
-  CONTEXT.md            # glossary + scope + business need
-  stakeholders.md       # register: role, interest/influence, RACI, engagement approach
-  elicitation/          # one file per session: plan, notes, confirmed results
-  requirements/         # one file per requirement, or one per set, with frontmatter:
-                        #   id, type (business|stakeholder|solution-functional|NFR|transition),
-                        #   status (draft|verified|validated|approved|retired), priority,
-                        #   source, traces_to, reusable: true/false
-  models/               # process, data, use case models (Mermaid/PlantUML)
-  decisions/            # ADR-style decision records
-  analysis/             # SWOT, Porter, gap analysis, business case
+  CONTEXT.md              # initiative glossary, scope, business need, data classification, initiative code
+  stakeholders.md         # register: role, interest/influence, RACI, approver flag
+  elicitation/            # one file per session: plan, notes, confirmed findings
+  requirements/           # one file per requirement set (ADR-0007)
+  stories/                # one file per story set (epic or feature)
+  decisions/              # initiative decisions
 ```
 
-Requirement types and statuses use BABOK's terms so that the lifecycle and reuse skills can run on the files.
+**Inside a requirement set file:** each item has a heading followed by a metadata block:
+`id` (e.g. `CLM-FR-012`, ADR-0008) · `class` (BR/SR/FR/NFR/TR) · `status` · `priority` · `source` · `traces_to` · `reused_from` · `provenance` · `reviewer` · `reviewed_on`.
 
----
+**Lifecycle (ADR-0010, ADR-0009):**
 
-## 4. Phased roadmap
+```
+draft ─► verified ─► validated ─► published ─► approved ─► retired / superseded
+ skill    skill        BA only     BA pastes     approver in Confluence
+ drafts   proposes,    (names the  to Confluence ───────────────────────────
+          BA confirms  stakeholders) workspace copy frozen; from here on:
+                                   Confluence only, BA edits by hand, no AI
+```
 
-### Phase 0: Foundations (1–2 weeks)
-- [ ] Pick **one pilot initiative** that's actually running (real stakeholders, low sensitivity).
-- [ ] Record **baseline metrics** on 3–5 artifacts you produce today (time, review defects).
-- [ ] Confirm **enterprise guardrails**: which data may go to the AI tool, how to redact, where outputs are stored. (See §6.)
-- [ ] Fix the workspace conventions (§3) and requirement frontmatter schema.
-- [ ] Write `CONTEXT.md` for *this* repo: the BA vocabulary the skills use.
+**Publication:** a skill produces a publish-ready page with a Page Properties block, item tables, the visible provenance footer and a *proposed* page label (`ai-generated` if any item is AI-generated). The BA has the final say on the label, then pastes the page into Confluence. (ADR-0002, ADR-0004, ADR-0007)
 
-### Phase 1: MVP slice (2–4 weeks): elicitation → requirements → verification
-This is the loop a BA runs every day, so it pays off soonest.
-1. `setup-ba-workspace`
-2. `grill-stakeholder` (primitive)
-3. `prepare-elicitation`: goals, stakeholders, technique choice, interview guide or questionnaire
-4. `technique: interviews`, `technique: survey-questionnaire`
-5. `confirm-elicitation`: turn raw notes or a transcript into confirmed findings, conflicts and open questions
-6. `technique: user-stories` + `acceptance-criteria` (Gherkin)
-7. `req-quality-check`: verify against the BABOK quality characteristics
-8. `ask-ba` router (covering only the skills above for now)
+**Delivery stories:** these can be drafted once their source requirements are `validated`. They live in a story set with temporary IDs (`CLM-ST-007`) and `derived_from` links. The BA creates the stories in Jira and records each Jira key. A story is never the only place a requirement exists.
 
-**Exit criterion:** used on the pilot for at least 2 weeks, with measurable time savings and no rise in review defects.
+## 4. Phase 1: the first version to pilot (9 skills)
 
-### Phase 2: Analysis depth (4–6 weeks)
-- Strategy: `current-state`, `future-state`, `swot`, `porter-five-forces`, `pestle`, `gap-analysis`, `business-case`, `risk-analysis`
-- RADD: `use-cases-scenarios`, `process-modelling` (Mermaid/BPMN-ish), `data-modelling`, `business-rules`, `define-design-options`, `validate-requirements`
-- Workshops and brainstorming facilitation packs
+| # | Skill | Does | BABOK reference |
+|---|---|---|---|
+| 1 | `ask-ba` | Routes a described situation to the right skill. In chat runtimes it's the "start here" guide: which skill to attach next and which inputs to bring | — |
+| 2 | `set-up-initiative` | Creates the workspace, `CONTEXT.md`, data classification, initiative code and stakeholder register | Planning: information management |
+| 3 | `grill-stakeholder` | A questioning primitive used by other skills, or directly to sharpen a need | Elicitation: interviews |
+| 4 | `prepare-elicitation` | Produces an interview guide or questionnaire from goals and stakeholders | Elicitation: prepare |
+| 5 | `notes-to-findings` | Turns notes or a transcript into confirmed findings, conflicts and open questions, with names replaced by roles | Elicitation: conduct, confirm |
+| 6 | `findings-to-requirements` | Builds a requirement set with IDs, classes, sources and provenance | Requirements Analysis & Design Definition: specify and model |
+| 7 | `check-requirement-quality` | Checks items against the BABOK quality characteristics and proposes `verified` | Requirements Analysis & Design Definition: verify |
+| 8 | `requirements-to-stories` | Builds a story set with Gherkin acceptance criteria from validated requirements | Requirements Analysis & Design Definition: user stories |
+| 9 | `prepare-for-publication` | Produces the publish-ready Confluence page and the proposed label | Life Cycle Management: communicate |
 
-### Phase 3: Lifecycle and reuse (4 weeks)
-- `trace`, `prioritize` (MoSCoW, WSJF, Kano), `assess-change` (impact analysis using trace links), `approve` (approval pack)
-- `reuse-library`: promote requirements with `reusable: true` into a shared catalogue, and search it when new work starts
+If the scope has to shrink, cut skill 8 first.
 
-### Phase 4: Planning, evaluation and rollout
-- Planning: `plan-ba-approach`, `stakeholder-analysis`, `ba-governance`, `ba-performance`
-- Solution evaluation: `measure-solution-performance`, `assess-limitations`, `recommend-actions`
-- Perspective files, the full router, packaging as a plugin for other BAs, and onboarding guidance
+**Definition of a released skill:** its evaluations pass in Claude Code and in at least one other runtime the pilot BAs use, and it carries a version tag.
 
----
+## 5. Later phases
 
-## 5. How each skill gets built (repeatable loop)
+- **Phase 2, analysis depth:** current state, future state, SWOT, Porter's five forces, PESTLE, gap analysis, business case, risk analysis. Also use cases and scenarios, process models (Mermaid), data models, business rules, design options, and facilitation packs for workshops and brainstorming.
+- **Phase 3, before-publication lifecycle and reuse:** trace queries, prioritisation (MoSCoW, WSJF, Kano), impact analysis on *unpublished* sets, and a reuse catalogue built from **frozen copies** on the drive. It is not built from Confluence, because of the data policy.
+- **Phase 4, rollout:** planning skills (BA approach, stakeholder analysis, governance), solution evaluation skills, `INSTALL.md` for each runtime, and moving the library to the company's own git host.
+- **Future options (deferred):** generated adapters for each runtime (ADR-0005) and direct publication through a connector (ADR-0002).
 
-1. **Grill the idea**: what situation triggers it, what goes in, what comes out, what "good" looks like.
-2. **Write SKILL.md**: frontmatter (`name`, `description`), steps, output template, completion criteria, and the skills it hands off to.
-3. **Write 3–5 evals**: realistic prompts plus checkable properties of the output (e.g. "every story has ≥1 acceptance criterion", "no requirement uses vague words like *fast* or *user-friendly*").
-4. **Run it on real pilot work** and note where it fails.
-5. **Tighten it**: prune text and fix the description so it triggers when it should.
+## 6. How each skill gets built
 
----
+1. Grill it: triggers, inputs, outputs, what "good" looks like.
+2. Write `SKILL.md`: frontmatter with name, situation-first description and BABOK reference. Then steps, the output template with provenance fields, completion criteria and handoffs. Keep it under about 150 lines.
+3. Write 3–5 evals: realistic prompts plus checkable properties, such as "every item has an ID, class, source and provenance" or "no vague terms like *fast*".
+4. Run it in Claude Code and in one other pilot runtime, on real pilot work.
+5. Tighten it, tag a version and release it.
 
-## 6. Enterprise guardrails
+## 7. Phase 0: before building
 
-- **Confidentiality:** no customer PII or restricted data in prompts unless your AI platform is approved for it. Add a redaction step to `confirm-elicitation` when it ingests transcripts.
-- **BABOK copyright:** BABOK® is IIBA's intellectual property. Write skills in your own words and cite section numbers. Don't paste BABOK text into skill files, especially if the repo is ever shared outside the company.
-- **Accountability:** outputs are drafts. Approval stays with the people named in the stakeholder register.
-- **Bias and hallucination:** skills must keep *what stakeholders said* (with its source) separate from *what the AI inferred*. Mark inferences explicitly.
-
----
-
-## 7. Decisions to make next
-
-1. **Runtime.** Which tools will the BAs run this in (Claude Code, Claude desktop/Cowork, an enterprise Copilot)? This decides how skills are packaged.
-2. **System of record.** Do requirements stay in markdown permanently, or does markdown get exported to or synced with Jira/ADO/Confluence later?
-3. **Pilot initiative and baseline artifacts.** Which project, and which 3–5 artifacts get measured?
-4. **Audience.** Is this just for you at first, or for the whole BA community of practice? That changes how much onboarding and consistency work is needed.
-5. **Model notation.** Mermaid (text, diffs well) or BPMN/UML tools?
+- [ ] Choose the pilot initiative: one that is in early elicitation now, with at least one pilot BA on a runtime other than Claude.
+- [ ] Take baselines for the interview guide, the elicitation summary, the story set, and peer-review defects.
+- [ ] Confirm which runtimes are cleared for which data classifications.
+- [ ] Check IP ownership before anything company-specific goes into this repo. It stays in this repo until the pilot proves value, then moves to the company git host.

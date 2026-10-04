@@ -36,7 +36,7 @@ Moving an approved artifact from the workspace into Confluence, which becomes it
 _Avoid_: Export, sync, upload
 
 **Frozen copy**:
-The workspace file of a requirement set after publication, kept for history and never edited again. Later changes start from a fresh copy taken from Confluence.
+The workspace file of a requirement set after publication, kept for history, reuse and story drafting, and never edited again. Changes to a published set happen only in Confluence, by the BA.
 
 **Publish-ready page**:
 A version of a requirement set generated for pasting into Confluence: a page-properties block, item tables and the provenance footer, with no raw metadata.
@@ -51,7 +51,7 @@ _Avoid_: Ticket, Jira requirement
 ### Requirement lifecycle
 
 **Lifecycle status**:
-Where a requirement is in its life, in order: draft, verified, validated, published, approved, then retired or superseded. The BA tracks it in the workspace up to published; from then on Confluence has the final say.
+Where a requirement is in its life, in order: draft, verified, validated, published, approved, then retired or superseded. The BA tracks it in the workspace up to published; from then on it lives only in Confluence.
 
 **Verified**:
 The requirement passes the quality checks (well-formed, unambiguous, testable and so on). A skill may propose it; the BA confirms.
