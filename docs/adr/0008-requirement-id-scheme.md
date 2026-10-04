@@ -1,0 +1,3 @@
+# Requirement IDs: initiative code, BABOK class code, sequence
+
+IDs look like `CLM-FR-012`: initiative code, requirement class (BR business, SR stakeholder, FR functional, NFR non-functional, TR transition), and a sequence number within the initiative. IDs are never renumbered or reused; a retired item keeps its ID with status `retired`. An item copied from another initiative or the shared catalogue gets a new ID plus a `reused_from:` field. We chose readable IDs over globally unique identifiers because people quote them in Confluence, Jira and meetings, and they must stay stable across all three.

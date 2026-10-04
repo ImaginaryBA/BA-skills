@@ -1,0 +1,3 @@
+# A requirement set is one workspace file and one Confluence page
+
+Requirements are grouped into requirement sets (e.g. per feature or capability). Each set is one markdown file in the workspace, with every item as a heading plus a small metadata block, and is published as one Confluence page. We rejected one file per requirement because BAs in chat runtimes save every output by hand, and because Confluence pages are per set anyway. Publication goes through a publish-ready version laid out for Confluence's Page Properties macro, so Confluence can build a cross-initiative requirements catalogue and a future connector has a fixed target.

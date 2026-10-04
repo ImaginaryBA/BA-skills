@@ -17,12 +17,30 @@ _Avoid_: Repo, project folder
 **Data classification**:
 The sensitivity level a workspace declares once, which decides which runtimes may process its content.
 
+**Requirement set**:
+A named group of related requirements (e.g. one feature or capability), kept as one workspace file and published as one Confluence page.
+_Avoid_: Requirements document, BRD, spec
+
+**Requirement ID**:
+A stable, never-reused identifier of the form initiative code, requirement class, sequence (e.g. `CLM-FR-012`).
+
+**Requirement class**:
+The BABOK classification of a requirement: business (BR), stakeholder (SR), functional (FR), non-functional (NFR) or transition (TR).
+_Avoid_: Requirement type, category
+
 **Working draft**:
 A requirement or artifact still in the workspace's markdown, before publication. Skills may freely create and revise it.
 
 **Publication**:
 Moving an approved artifact from the workspace into Confluence, which becomes its system of record from then on.
 _Avoid_: Export, sync, upload
+
+**Publish-ready page**:
+A version of a requirement set generated for pasting into Confluence: a page-properties block, item tables and the provenance footer, with no raw metadata.
+
+**Delivery story**:
+A Jira story drafted by the BA from one or more requirements, linking back to their requirement IDs. It is a delivery artifact, not a requirement.
+_Avoid_: Ticket, Jira requirement
 
 ### Skills and runtimes
 
@@ -44,6 +62,9 @@ A runtime that can read and write workspace files by itself, so skills run with 
 
 **Chat runtime**:
 A runtime without file access, where the BA attaches the skill and its inputs and saves the output (e.g. Open WebUI).
+
+**Released skill**:
+A skill version whose evaluations pass in Claude Code and in at least one other runtime used by pilot BAs.
 
 ### Accountability
 
