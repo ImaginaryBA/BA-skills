@@ -35,12 +35,34 @@ A requirement or artifact still in the workspace's markdown, before publication.
 Moving an approved artifact from the workspace into Confluence, which becomes its system of record from then on.
 _Avoid_: Export, sync, upload
 
+**Frozen copy**:
+The workspace file of a requirement set after publication, kept for history and never edited again. Later changes start from a fresh copy taken from Confluence.
+
 **Publish-ready page**:
 A version of a requirement set generated for pasting into Confluence: a page-properties block, item tables and the provenance footer, with no raw metadata.
 
 **Delivery story**:
 A Jira story drafted by the BA from one or more requirements, linking back to their requirement IDs. It is a delivery artifact, not a requirement.
 _Avoid_: Ticket, Jira requirement
+
+### Requirement lifecycle
+
+**Lifecycle status**:
+Where a requirement is in its life: draft, verified, validated, approved, published, retired or superseded. The BA tracks it in the workspace; after publication, Confluence has the final say.
+
+**Verified**:
+The requirement passes the quality checks (well-formed, unambiguous, testable and so on). A skill may propose it; the BA confirms.
+_Avoid_: Reviewed, checked
+
+**Validated**:
+Named stakeholders confirmed the requirement meets their need. Only the BA sets it.
+
+**Approved**:
+A named approver from the stakeholder register signed the requirement off on a recorded date. Never set by a skill.
+_Avoid_: Signed off, accepted
+
+**Superseded**:
+Replaced by another requirement, which is named. The ID stays, never reused.
 
 ### Skills and runtimes
 

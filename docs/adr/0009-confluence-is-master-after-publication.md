@@ -1,0 +1,3 @@
+# After publication, Confluence is master and the workspace copy is frozen
+
+Once a requirement set is published, the Confluence page is the master and holds the final say on each item's lifecycle status; the workspace file is frozen as a historical copy. Any later change starts from a fresh copy that the BA pastes or exports from Confluence into the workspace, then republishes. We rejected having skills pull the page from Confluence themselves, because some runtimes and models have no Confluence access; a BA-supplied copy works in every runtime. IDs survive the round trip, and new items continue the initiative's sequence, never reusing an ID (ADR 0008).
