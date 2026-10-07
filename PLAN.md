@@ -44,7 +44,7 @@ Non-goals for the first version: direct Confluence or Jira integration, per-runt
   decisions/              # initiative decisions
 ```
 
-**Inside a requirement set file:** each item has a heading followed by a metadata block:
+**Inside a requirement set file:** each item has a heading followed by a Field | Value metadata table:
 `id` (e.g. `CLM-FR-012`, ADR-0008) · `class` (BR/SR/FR/NFR/TR) · `status` · `priority` · `source` · `traces_to` · `reused_from` · `provenance` · `reviewer` · `reviewed_on`.
 
 **Lifecycle (ADR-0010, ADR-0009):**
