@@ -15,11 +15,14 @@ The synced company-drive folder of markdown files holding one initiative's state
 _Avoid_: Repo, project folder
 
 **Data classification**:
-The sensitivity level a workspace declares once, which decides which runtimes may process its content.
+The sensitivity level a workspace declares once (Public, Internal, Confidential or Restricted), which decides which runtimes may process its content.
 
 **Requirement set**:
 A named group of related requirements (e.g. one feature or capability), kept as one workspace file and published as one Confluence page.
 _Avoid_: Requirements document, BRD, spec
+
+**Initiative code**:
+A 2–5 uppercase-letter code chosen by the BA at setup, prefixing every ID in the initiative.
 
 **Requirement ID**:
 A stable, never-reused identifier of the form initiative code, requirement class, sequence (e.g. `CLM-FR-012`).
@@ -90,6 +93,9 @@ A runtime that can read and write workspace files by itself, so skills run with 
 
 **Chat runtime**:
 A runtime without file access, where the BA attaches the skill and its inputs and saves the output (e.g. Open WebUI).
+
+**Shared conventions**:
+The master rules every skill follows, kept once under `shared/` and copied into each skill before release.
 
 **Released skill**:
 A skill version whose evaluations pass in Claude Code and in at least one other runtime used by pilot BAs.
