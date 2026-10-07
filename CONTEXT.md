@@ -14,6 +14,13 @@ _Avoid_: Project, change, engagement
 The synced company-drive folder of markdown files holding one initiative's state (glossary, stakeholders, elicitation results, requirements, decisions).
 _Avoid_: Repo, project folder
 
+**Initiative file**:
+`INITIATIVE.md`, the workspace's root file: business need, scope, glossary, data classification, runtime clearance, initiative code and ID register.
+_Avoid_: Context file, charter
+
+**ID register**:
+The section of the initiative file holding the last sequence number used per class; the source of every new ID.
+
 **Data classification**:
 The sensitivity level a workspace declares once (Public, Internal, Confidential or Restricted), which decides which runtimes may process its content.
 
@@ -22,7 +29,7 @@ A named group of related requirements (e.g. one feature or capability), kept as 
 _Avoid_: Requirements document, BRD, spec
 
 **Initiative code**:
-A 2–5 uppercase-letter code chosen by the BA at setup, prefixing every ID in the initiative.
+A 2–5 uppercase-letter code chosen by the BA at setup, prefixing every ID in the initiative. Avoid codes that collide with ticket prefixes in the business's tools (e.g. `INC`).
 
 **Requirement ID**:
 A stable, never-reused identifier of the form initiative code, requirement class, sequence (e.g. `CLM-FR-012`).
