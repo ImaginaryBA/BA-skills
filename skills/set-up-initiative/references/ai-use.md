@@ -1,8 +1,8 @@
-<!-- Generated from shared/provenance.md by scripts/sync_shared.py. Edit the master, not this copy. -->
+<!-- Generated from shared/ai-use.md by scripts/sync_shared.py. Edit the master, not this copy. -->
 
-# AI provenance
+# AI use
 
-Every item a skill produces (a requirement, finding or story) carries a provenance label. This is mandatory: an unlabelled item is a defect. Workspace files that hold only the BA's own facts (`INITIATIVE.md`, `stakeholders.md`) carry the footer only.
+Every item a skill produces (a requirement, finding or story) carries an AI use label. This is mandatory: an unlabelled item is a defect. Workspace files that hold only the BA's own facts (`INITIATIVE.md`, `stakeholders.md`) carry the footer only.
 
 ## Labels
 
@@ -25,4 +25,4 @@ If the runtime's name is unknown, ask the BA.
 
 ## Labels in delivery tools
 
-On publication, the Confluence page gets the label `ai-generated` if any item on it is AI-generated, otherwise `ai-assisted`; the skill proposes it and the BA decides. Each Jira story gets the label matching its own provenance.
+On publication, the Confluence page gets the label `ai-generated` if any item on it is AI-generated, otherwise `ai-assisted`; the skill proposes it and the BA decides. Each Jira story gets the label matching its own AI use.

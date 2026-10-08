@@ -38,6 +38,13 @@ A stable, never-reused identifier of the form initiative code, requirement class
 One confirmed statement from elicitation, with an ID (e.g. `IMT-FN-004`) and the stakeholder role it came from. The source every requirement points to.
 _Avoid_: Note, input, observation
 
+**Threshold**:
+The measurable condition that proves a requirement is met (e.g. "95% of incident searches return in ≤ 2 s"). Mandatory for BR and NFR.
+_Avoid_: Fit criterion, acceptance criteria (those belong to stories)
+
+**Rationale**:
+One sentence on why a requirement exists, drawn from its source findings; `TBD` plus an open question when the source does not say.
+
 **Open question**:
 A conflict between findings, or a gap too vague to state as a requirement, listed with the findings involved and who to ask. Never silently resolved.
 
@@ -56,7 +63,7 @@ _Avoid_: Export, sync, upload
 The workspace file of a requirement set after publication, kept for history, reuse and story drafting, and never edited again. Changes to a published set happen only in Confluence, by the BA.
 
 **Publish-ready page**:
-A version of a requirement set generated for pasting into Confluence: a page-properties block, item tables and the provenance footer, with no raw metadata.
+A version of a requirement set generated for pasting into Confluence: a page-properties block, item tables and the footer, with no raw metadata.
 
 **Delivery story**:
 A Jira story drafted by the BA from one or more validated (or later) requirements, linking back to their requirement IDs. It is a delivery artifact, never the only home of a requirement.
@@ -116,8 +123,9 @@ A skill version whose evaluations pass in Claude Code and in at least one other 
 
 ### Accountability
 
-**AI provenance label**:
+**AI use label**:
 A mandatory per-item statement: AI-generated or AI-assisted. Travels with the item through publication.
+_Avoid_: Provenance, origin (clashes with Source)
 
 **AI-generated**:
 AI produced the substance (content, structure, wording); a human reviewed it.
@@ -126,4 +134,4 @@ AI produced the substance (content, structure, wording); a human reviewed it.
 A human produced the substance; AI reviewed, critiqued, reformatted or suggested. An AI-generated item becomes AI-assisted only when the BA confirms they substantively rewrote it.
 
 **Reviewer**:
-The named person who checked an item, with the date. Recorded separately from the provenance label; being reviewed is not being approved.
+The named person who checked an item, with the date. Recorded separately from the AI use label; being reviewed is not being approved.

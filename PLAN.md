@@ -15,7 +15,7 @@ Status: **design agreed through the grilling session; ready to build Phase 1.**
 |---|---|
 | Less time on routine BA artifacts | Time per artifact compared with a baseline taken in Phase 0 |
 | Better artifacts | Defects found in peer review and stakeholder validation |
-| Transparent, accountable AI use | 100% of items carry an AI provenance label and a reviewer |
+| Transparent, accountable AI use | 100% of items carry an AI use label and a reviewer |
 | Traceability and reuse | Share of items with trace links; number of items reused from frozen copies |
 | Adoption by the pilot group (2–5 BAs) | Weekly use and feedback, in at least two runtimes |
 
@@ -27,7 +27,7 @@ Non-goals for the first version: direct Confluence or Jira integration, per-runt
 - **Two support levels.** Agentic runtimes read and write the workspace themselves. In chat runtimes, the BA attaches the skill and its inputs, then saves what it outputs. That's why every skill declares its inputs and outputs explicitly. (ADR-0005)
 - **English only**, the company's official language.
 - **Data.** Each workspace declares its data classification. Personal names get replaced with roles. Customer and production data are never used. Only local models may process Confluence content. (ADR-0006)
-- **Provenance.** Every item is labelled AI-generated or AI-assisted, and the reviewer and date are recorded separately. Only the BA can downgrade a label from generated to assisted. The footer also records skill, version and runtime. (ADR-0004)
+- **AI use.** Every item is labelled AI-generated or AI-assisted, and the reviewer and date are recorded separately. Only the BA can downgrade a label from generated to assisted. The footer also records skill, version and runtime. (ADR-0004)
 - **Named by situation.** Skills are named after what the BA is trying to do, and their BABOK reference sits in metadata. (ADR-0003)
 
 ## 3. Information model
@@ -45,7 +45,7 @@ Non-goals for the first version: direct Confluence or Jira integration, per-runt
 ```
 
 **Inside a requirement set file:** each item has a heading followed by a Field | Value metadata table:
-`id` (e.g. `CLM-FR-012`, ADR-0008) · `class` (BR/SR/FR/NFR/TR) · `status` · `priority` · `source` · `traces_to` · `reused_from` · `provenance` · `reviewer` · `reviewed_on`.
+`id` (e.g. `CLM-FR-012`, ADR-0008) · `class` (BR/SR/FR/NFR/TR) · `status` · `priority` · `source` · `traces_to` · `reused_from` · `ai_use` · `reviewer` · `reviewed_on`.
 
 **Lifecycle (ADR-0010, ADR-0009):**
 
@@ -57,7 +57,7 @@ draft ─► verified ─► validated ─► published ─► approved ─► r
                                    Confluence only, BA edits by hand, no AI
 ```
 
-**Publication:** a skill produces a publish-ready page with a Page Properties block, item tables, the visible provenance footer and a *proposed* page label (`ai-generated` if any item is AI-generated). The BA has the final say on the label, then pastes the page into Confluence. (ADR-0002, ADR-0004, ADR-0007)
+**Publication:** a skill produces a publish-ready page with a Page Properties block, item tables, the footer and a *proposed* page label (`ai-generated` if any item is AI-generated). The BA has the final say on the label, then pastes the page into Confluence. (ADR-0002, ADR-0004, ADR-0007)
 
 **Delivery stories:** these can be drafted once their source requirements are `validated`. They live in a story set with temporary IDs (`CLM-ST-007`) and `derived_from` links. The BA creates the stories in Jira and records each Jira key. A story is never the only place a requirement exists.
 
@@ -70,7 +70,7 @@ draft ─► verified ─► validated ─► published ─► approved ─► r
 | 3 | `grill-stakeholder` | A questioning primitive used by other skills, or directly to sharpen a need | Elicitation: interviews |
 | 4 | `prepare-elicitation` | Produces an interview guide or questionnaire from goals and stakeholders | Elicitation: prepare |
 | 5 | `notes-to-findings` | Turns notes or a transcript into confirmed findings, conflicts and open questions, with names replaced by roles | Elicitation: conduct, confirm |
-| 6 | `findings-to-requirements` | Builds a requirement set with IDs, classes, sources and provenance | Requirements Analysis & Design Definition: specify and model |
+| 6 | `findings-to-requirements` | Builds a requirement set with IDs, classes, sources and AI use labels | Requirements Analysis & Design Definition: specify and model |
 | 7 | `check-requirement-quality` | Checks items against the BABOK quality characteristics and proposes `verified` | Requirements Analysis & Design Definition: verify |
 | 8 | `requirements-to-stories` | Builds a story set with Gherkin acceptance criteria from validated requirements | Requirements Analysis & Design Definition: user stories |
 | 9 | `prepare-for-publication` | Produces the publish-ready Confluence page and the proposed label | Life Cycle Management: communicate |
@@ -89,8 +89,8 @@ If the scope has to shrink, cut skill 8 first.
 ## 6. How each skill gets built
 
 1. Grill it: triggers, inputs, outputs, what "good" looks like.
-2. Write `SKILL.md`: frontmatter with name, situation-first description and BABOK reference. Then steps, the output template with provenance fields, completion criteria and handoffs. Keep it under about 150 lines.
-3. Write 3–5 evals: realistic prompts plus checkable properties, such as "every item has an ID, class, source and provenance" or "no vague terms like *fast*".
+2. Write `SKILL.md`: frontmatter with name, situation-first description and BABOK reference. Then steps, the output template with AI use fields, completion criteria and handoffs. Keep it under about 150 lines.
+3. Write 3–5 evals: realistic prompts plus checkable properties, such as "every item has an ID, class, source and AI use label" or "no vague terms like *fast*".
 4. Run it in Claude Code and in one other pilot runtime, on real pilot work.
 5. Tighten it, tag a version and release it.
 

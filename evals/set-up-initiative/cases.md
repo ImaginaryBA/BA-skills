@@ -16,7 +16,7 @@ Shared input used by cases 1 and 3 (the BA's message):
   - [ ] ID register lists all seven classes at `000`.
   - [ ] Glossary and stakeholder tables contain only their header rows (none supplied).
   - [ ] No angle-bracket placeholder remains; anything not supplied reads `TBD`.
-  - [ ] Each file ends with `Produced with set-up-initiative v0.1.0 in Claude Code, <today>.` and has no other provenance.
+  - [ ] Each file ends with `Produced with set-up-initiative v0.1.0 in Claude Code, <today>.` and has no other AI use label.
   - [ ] Lists the `TBD` fields and suggests `prepare-elicitation`.
 
 ## 2. Missing mandatory inputs

@@ -9,14 +9,14 @@ metadata:
     techniques: []
   inputs: [initiative name, initiative code, business need, scope in, scope out, data classification, cleared runtimes, BA name, optional sponsor, optional stakeholders, optional known terms]
   outputs: [INITIATIVE.md, stakeholders.md, elicitation/, requirements/, stories/, decisions/]
-  shared: [workspace, ids, provenance, data-classification]
+  shared: [workspace, ids, ai-use, data-classification]
 ---
 
 # Set up an initiative
 
 Creates a new workspace exactly as the BA describes it. The BA's facts are the only source: every field holds what the BA said or is marked `TBD`.
 
-References (read before step 1): `references/workspace.md`, `references/ids.md`, `references/provenance.md`, `references/data-classification.md`.
+References (read before step 1): `references/workspace.md`, `references/ids.md`, `references/ai-use.md`, `references/data-classification.md`.
 
 ## 1. Collect the inputs
 
@@ -41,7 +41,7 @@ Fill `templates/INITIATIVE.md` and `templates/stakeholders.md`.
 - Stakeholder names stay as given (the register keeps real names).
 - Glossary: only terms the BA supplied. Leave the table with its header row if there are none.
 - ID register: every class at `000`.
-- End each file with the footer from `references/provenance.md`; workspace files carry no other provenance.
+- End each file with the footer from `references/ai-use.md`; workspace files carry no other provenance.
 
 Done when no placeholder in angle brackets remains: every field is filled from the BA's input or reads `TBD`.
 
