@@ -2,7 +2,7 @@
 
 # AI provenance
 
-Every item a skill produces carries a provenance label. This is mandatory: an unlabelled item is a defect.
+Every item a skill produces (a requirement, finding or story) carries a provenance label. This is mandatory: an unlabelled item is a defect. Workspace files that hold only the BA's own facts (`INITIATIVE.md`, `stakeholders.md`) carry the footer only.
 
 ## Labels
 

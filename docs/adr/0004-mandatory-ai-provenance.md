@@ -3,3 +3,5 @@
 Every item a skill produces (a requirement, a finding, a story) is labelled AI-generated or AI-assisted, with the reviewer's name and date recorded separately, because a label never means approval. This is an enterprise transparency and accountability requirement. Only the BA can move an item from AI-generated to AI-assisted, by confirming they substantively rewrote it; skills never change a label on their own.
 
 Provenance appears in three places: the per-item metadata, labels in the delivery tools (a Confluence page label on publication, and a label on each Jira story), and a one-line footer naming the skill, its version and the runtime. Labels can be removed silently, while the footer travels with copies and exports, so we keep both. Because a Confluence label is per page while provenance is per item, a skill *proposes* the page label conservatively (`ai-generated` if any item on the page is AI-generated, otherwise `ai-assisted`) and the BA makes the final call.
+
+Workspace files holding only the BA's own facts (`INITIATIVE.md`, `stakeholders.md`) carry the footer only, with no per-section labels.

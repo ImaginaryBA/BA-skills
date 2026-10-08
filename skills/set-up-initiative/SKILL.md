@@ -41,8 +41,7 @@ Fill `templates/INITIATIVE.md` and `templates/stakeholders.md`.
 - Stakeholder names stay as given (the register keeps real names).
 - Glossary: only terms the BA supplied. Leave the table with its header row if there are none.
 - ID register: every class at `000`.
-- Provenance: label each section `AI-assisted` (the BA supplied the substance). Leave `Reviewer` and `Reviewed on` empty.
-- End each file with the footer from `references/provenance.md`.
+- End each file with the footer from `references/provenance.md`; workspace files carry no other provenance.
 
 Done when no placeholder in angle brackets remains: every field is filled from the BA's input or reads `TBD`.
 

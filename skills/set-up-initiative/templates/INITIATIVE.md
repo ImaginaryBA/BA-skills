@@ -37,13 +37,5 @@
 | TR | Transition requirement | 000 |
 | ST | Delivery story | 000 |
 
-## Provenance
-
-| Section | Provenance | Reviewer | Reviewed on |
-|---|---|---|---|
-| Business need | AI-assisted | | |
-| Scope | AI-assisted | | |
-| Glossary | AI-assisted | | |
-
 ---
 Produced with set-up-initiative v<version> in <runtime>, <YYYY-MM-DD>.
