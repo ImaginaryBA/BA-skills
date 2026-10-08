@@ -36,6 +36,7 @@
 | NFR | Non-functional requirement | 000 |
 | TR | Transition requirement | 000 |
 | ST | Delivery story | 000 |
+| FN | Elicitation finding | 000 |
 
 ---
 Produced with set-up-initiative v<version> in <runtime>, <YYYY-MM-DD>.

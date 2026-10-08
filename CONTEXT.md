@@ -34,6 +34,13 @@ A 2–5 uppercase-letter code chosen by the BA at setup, prefixing every ID in t
 **Requirement ID**:
 A stable, never-reused identifier of the form initiative code, requirement class, sequence (e.g. `CLM-FR-012`).
 
+**Finding**:
+One confirmed statement from elicitation, with an ID (e.g. `IMT-FN-004`) and the stakeholder role it came from. The source every requirement points to.
+_Avoid_: Note, input, observation
+
+**Open question**:
+A conflict between findings, or a gap too vague to state as a requirement, listed with the findings involved and who to ask. Never silently resolved.
+
 **Requirement class**:
 The BABOK classification of a requirement: business (BR), stakeholder (SR), functional (FR), non-functional (NFR) or transition (TR).
 _Avoid_: Requirement type, category
