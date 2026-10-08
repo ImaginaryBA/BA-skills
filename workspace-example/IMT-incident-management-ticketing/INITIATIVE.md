@@ -38,13 +38,13 @@ The IT service desk handles incidents in a legacy ticketing tool that is out of 
 
 | Class | Meaning | Last used |
 |---|---|---|
-| BR | Business requirement | 000 |
-| SR | Stakeholder requirement | 000 |
-| FR | Functional requirement | 000 |
-| NFR | Non-functional requirement | 000 |
+| BR | Business requirement | 002 |
+| SR | Stakeholder requirement | 001 |
+| FR | Functional requirement | 003 |
+| NFR | Non-functional requirement | 001 |
 | TR | Transition requirement | 000 |
 | ST | Delivery story | 000 |
-| FN | Elicitation finding | 000 |
+| FN | Elicitation finding | 009 |
 
 ---
 Produced with set-up-initiative v0.1.0 in Claude Code, 2026-10-08.
