@@ -8,7 +8,7 @@ Run each case in a fresh session of the named runtime, with only this skill load
 - **Prompt:** "Draft requirements from elicitation/2026-10-12-service-desk-workshop.md."
 - **Checks before confirmation:**
   - [ ] Writes no file before the BA confirms.
-  - [ ] Proposes sets with the findings going into each, the BRs to draft (flagged for BA and sponsor confirmation), and the open questions.
+  - [ ] Proposes sets with the findings going into each, the BR each set traces to, the BRs to draft (flagged for BA and sponsor confirmation), and the open questions.
 - **Then reply:** "Confirmed."
 - **Checks after:**
   - [ ] BRs are in `requirements/business-requirements.md`, AI-generated, tracing to `Business need`.

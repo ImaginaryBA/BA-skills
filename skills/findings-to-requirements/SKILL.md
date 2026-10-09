@@ -37,6 +37,7 @@ Done when every finding is either a candidate or an open question.
 
 Show the BA, in one message:
 - the sets to create or extend, with the candidate findings going into each;
+- for each set, the business requirements its items will trace to, so the BA confirms every trace link before it is written;
 - the business requirements to draft from the business need and the findings, flagged as needing the BA's and sponsor's confirmation;
 - the open questions.
 
