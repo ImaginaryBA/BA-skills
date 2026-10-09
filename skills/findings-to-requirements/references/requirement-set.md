@@ -73,5 +73,6 @@ Conflicts between findings are listed here and never resolved by a skill.
 
 ## Changing a set
 
-- A **draft** set may gain new items and open questions appended at the end of their sections. Existing items are never edited or removed by a skill. Each change raises the version by 0.1.
+- A **draft** set may gain new items and open questions appended at the end of their sections. Each change raises the version by 0.1.
+- Existing items are edited by one skill only, `check-requirement-quality`, in two ways, each item by each item with the BA's explicit approval: applying a rewrite the BA picked, and setting `Status`, `Reviewer` and `Reviewed on` when the BA confirms `verified`. No skill removes an item.
 - A **published** set is a frozen copy: never changed. New needs go into a new set.

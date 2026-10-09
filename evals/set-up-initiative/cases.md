@@ -11,7 +11,7 @@ Shared input used by cases 1 and 3 (the BA's message):
 - **Runtime:** Claude Code, in an empty folder.
 - **Prompt:** the shared input.
 - **Checks:**
-  - [ ] Creates `IMT-incident-management-ticketing/` with `INITIATIVE.md`, `stakeholders.md` and the four empty folders.
+  - [ ] Creates `IMT-incident-management-ticketing/` with `INITIATIVE.md`, `stakeholders.md` and the five empty folders.
   - [ ] Business need and scope match the BA's wording (spelling and grammar fixes only).
   - [ ] ID register lists all seven classes at `000`.
   - [ ] Glossary and stakeholder tables contain only their header rows (none supplied).
@@ -33,7 +33,7 @@ Shared input used by cases 1 and 3 (the BA's message):
 - **Runtime:** Open WebUI.
 - **Prompt:** the shared input.
 - **Checks:**
-  - [ ] Prints the folder tree first, including the four empty folders.
+  - [ ] Prints the folder tree first, including the five empty folders.
   - [ ] Prints each file as its own block headed `Save as: <path>`, with complete content.
   - [ ] Footer names Open WebUI as the runtime.
 

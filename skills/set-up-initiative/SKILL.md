@@ -8,7 +8,7 @@ metadata:
     tasks: ["3.4 Plan Business Analysis Information Management"]
     techniques: []
   inputs: [initiative name, initiative code, business need, scope in, scope out, data classification, cleared runtimes, BA name, optional sponsor, optional stakeholders, optional known terms]
-  outputs: [INITIATIVE.md, stakeholders.md, elicitation/, requirements/, stories/, decisions/]
+  outputs: [INITIATIVE.md, stakeholders.md, elicitation/, requirements/, stories/, decisions/, reviews/]
   shared: [workspace, ids, ai-use, data-classification]
 ---
 
@@ -47,7 +47,7 @@ Done when no placeholder in angle brackets remains: every field is filled from t
 
 ## 3. Deliver
 
-Deliver the two files and the empty folders `elicitation/`, `requirements/`, `stories/`, `decisions/` as `references/workspace.md` describes for this runtime. In a chat runtime, list the empty folders in the tree for the BA to create.
+Deliver the two files and the empty folders `elicitation/`, `requirements/`, `stories/`, `decisions/`, `reviews/` as `references/workspace.md` describes for this runtime. In a chat runtime, list the empty folders in the tree for the BA to create.
 
 Then list every `TBD` field and suggest the next step: prepare elicitation with `prepare-elicitation`.
 

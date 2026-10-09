@@ -14,6 +14,7 @@ A workspace is one folder per initiative on the synced company drive. Skills rea
   requirements/      # one file per requirement set
   stories/           # one file per story set
   decisions/         # initiative decisions
+  reviews/           # quality reports, one per check run
 ```
 
 Folder name: initiative code, a hyphen, then the initiative name in lowercase with hyphens (e.g. `IMT-incident-management-ticketing`).

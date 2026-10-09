@@ -42,6 +42,7 @@ Non-goals for the first version: direct Confluence or Jira integration, per-runt
   requirements/           # one file per requirement set (ADR-0007)
   stories/                # one file per story set (epic or feature)
   decisions/              # initiative decisions
+  reviews/                # quality reports
 ```
 
 **Inside a requirement set file:** each item has a heading followed by a Field | Value metadata table:
