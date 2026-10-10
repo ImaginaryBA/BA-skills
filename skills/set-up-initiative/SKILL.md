@@ -1,15 +1,43 @@
 ---
 name: set-up-initiative
-description: Start the workspace for a new initiative — creates INITIATIVE.md (business need, scope, glossary, data classification, cleared runtimes, initiative code, ID register), the stakeholder register and the empty folders. Use when a BA begins a new piece of analysis work, or when another skill finds no INITIATIVE.md.
+description: >-
+  Start the workspace for a new initiative — creates INITIATIVE.md
+  (business need, scope, glossary, data classification, cleared runtimes,
+  initiative code, ID register), the stakeholder register and the empty
+  folders. Use when a BA begins a new piece of analysis work, or when
+  another skill finds no INITIATIVE.md.
 metadata:
   version: 0.1.0
   babok:
-    knowledge_area: "3 Business Analysis Planning and Monitoring"
-    tasks: ["3.4 Plan Business Analysis Information Management"]
+    knowledge_area: 3 Business Analysis Planning and Monitoring
+    tasks:
+      - 3.4 Plan Business Analysis Information Management
     techniques: []
-  inputs: [initiative name, initiative code, business need, scope in, scope out, data classification, cleared runtimes, BA name, optional sponsor, optional stakeholders, optional known terms]
-  outputs: [INITIATIVE.md, stakeholders.md, elicitation/, requirements/, stories/, decisions/, reviews/]
-  shared: [workspace, ids, ai-use, data-classification]
+  inputs:
+    - initiative name
+    - initiative code
+    - business need
+    - scope in
+    - scope out
+    - data classification
+    - cleared runtimes
+    - BA name
+    - optional sponsor
+    - optional stakeholders
+    - optional known terms
+  outputs:
+    - INITIATIVE.md
+    - stakeholders.md
+    - elicitation/
+    - requirements/
+    - stories/
+    - decisions/
+    - reviews/
+  shared:
+    - workspace
+    - ids
+    - ai-use
+    - data-classification
 ---
 
 # Set up an initiative

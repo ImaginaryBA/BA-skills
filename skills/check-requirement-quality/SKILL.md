@@ -1,15 +1,34 @@
 ---
 name: check-requirement-quality
-description: Check draft requirement sets against the BABOK quality characteristics, SMART, structure, traceability and vague wording; write a quality report with suggested rewrites; then apply the rewrites the BA picks and mark the items the BA confirms as verified. Use when a BA wants requirements reviewed, verified or made ready for stakeholder validation.
+description: >-
+  Check draft requirement sets against the BABOK quality characteristics,
+  SMART, structure, traceability and vague wording; write a quality report
+  with suggested rewrites; then apply the rewrites the BA picks and mark
+  the items the BA confirms as verified. Use when a BA wants requirements
+  reviewed, verified or made ready for stakeholder validation.
 metadata:
   version: 0.1.0
   babok:
-    knowledge_area: "7 Requirements Analysis and Design Definition"
-    tasks: ["7.2 Verify Requirements"]
-    techniques: ["10.1 Acceptance and Evaluation Criteria", "10.37 Reviews"]
-  inputs: [INITIATIVE.md, draft requirement sets, business-requirements.md, elicitation files]
-  outputs: [reviews/<set-slug>-quality-<date>.md, requirement sets with approved rewrites and verified items]
-  shared: [workspace, ai-use, data-classification, findings, requirement-set]
+    knowledge_area: 7 Requirements Analysis and Design Definition
+    tasks:
+      - 7.2 Verify Requirements
+    techniques:
+      - 10.1 Acceptance and Evaluation Criteria
+      - 10.37 Reviews
+  inputs:
+    - INITIATIVE.md
+    - draft requirement sets
+    - business-requirements.md
+    - elicitation files
+  outputs:
+    - "reviews/<set-slug>-quality-<date>.md"
+    - requirement sets with approved rewrites and verified items
+  shared:
+    - workspace
+    - ai-use
+    - data-classification
+    - findings
+    - requirement-set
 ---
 
 # Check requirement quality

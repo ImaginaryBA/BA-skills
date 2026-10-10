@@ -3,7 +3,9 @@
 
 Each skill lists what it needs in its SKILL.md frontmatter:
     metadata:
-      shared: [workspace, ids]
+      shared:
+        - workspace
+        - ids
 which copies shared/workspace.md and shared/ids.md into skills/<skill>/references/.
 
 Usage:
@@ -25,10 +27,14 @@ def shared_names(skill_md: Path) -> list[str]:
     front = re.match(r"^---\n(.*?)\n---\n", text, re.S)
     if not front:
         sys.exit(f"{skill_md}: missing frontmatter")
-    line = re.search(r"^\s*shared:\s*\[(.*?)\]\s*$", front.group(1), re.M)
-    if not line:
+    fm = front.group(1)
+    inline = re.search(r"^\s*shared:\s*\[(.*?)\]\s*$", fm, re.M)
+    if inline:
+        return [n.strip() for n in inline.group(1).split(",") if n.strip()]
+    listed = re.search(r"^(\s*)shared:\s*\n((?:\1\s+-\s.*\n?)*)", fm, re.M)
+    if not listed:
         return []
-    return [n.strip() for n in line.group(1).split(",") if n.strip()]
+    return [re.sub(r"^\s*-\s*", "", l).strip() for l in listed.group(2).splitlines() if l.strip()]
 
 
 def main() -> int:

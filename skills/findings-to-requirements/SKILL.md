@@ -1,15 +1,36 @@
 ---
 name: findings-to-requirements
-description: Turn elicitation findings — or raw notes, emails and old documents — into requirement sets with IDs, classes, rationale, thresholds, sources, trace links and AI use labels, plus open questions for conflicts and gaps. Use after elicitation, when a BA wants requirements drafted or added to a draft set.
+description: >-
+  Turn elicitation findings — or raw notes, emails and old documents —
+  into requirement sets with IDs, classes, rationale, thresholds, sources,
+  trace links and AI use labels, plus open questions for conflicts and
+  gaps. Use after elicitation, when a BA wants requirements drafted or
+  added to a draft set.
 metadata:
   version: 0.1.0
   babok:
-    knowledge_area: "7 Requirements Analysis and Design Definition"
-    tasks: ["7.1 Specify and Model Requirements"]
-    techniques: ["10.1 Acceptance and Evaluation Criteria"]
-  inputs: [INITIATIVE.md, stakeholders.md, elicitation files or raw input, existing draft requirement sets]
-  outputs: [requirement set files, business-requirements.md, elicitation file for raw input, updated ID register]
-  shared: [workspace, ids, ai-use, data-classification, findings, requirement-set]
+    knowledge_area: 7 Requirements Analysis and Design Definition
+    tasks:
+      - 7.1 Specify and Model Requirements
+    techniques:
+      - 10.1 Acceptance and Evaluation Criteria
+  inputs:
+    - INITIATIVE.md
+    - stakeholders.md
+    - elicitation files or raw input
+    - existing draft requirement sets
+  outputs:
+    - requirement set files
+    - business-requirements.md
+    - elicitation file for raw input
+    - updated ID register
+  shared:
+    - workspace
+    - ids
+    - ai-use
+    - data-classification
+    - findings
+    - requirement-set
 ---
 
 # Findings to requirements
