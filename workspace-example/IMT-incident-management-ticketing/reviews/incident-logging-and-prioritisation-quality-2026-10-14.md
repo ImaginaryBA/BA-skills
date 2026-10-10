@@ -6,8 +6,8 @@
 | Sets checked | incident-logging-and-prioritisation.md v0.1, business-requirements.md v0.1 |
 | Checked on | 2026-10-14 |
 | Items checked | 7 |
-| Must fix | 9 issues on 5 items |
-| Consider | 3 |
+| Must fix | 8 issues on 5 items |
+| Consider | 4 |
 | Proposed as verified | IMT-FR-001, IMT-FR-002 |
 
 ## Results
