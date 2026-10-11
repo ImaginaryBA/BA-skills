@@ -25,9 +25,11 @@ If the runtime's name is unknown, ask the BA.
 
 ## Disclosure to stakeholders
 
-Every interview guide opening and every questionnaire introduction tells participants, in these words unless the company provides its own:
+Every interview guide opening and every questionnaire introduction tells participants, in these words:
 
-> Notes from this session will be processed with an AI tool approved by the company. Your name will be replaced by your role in anything the tool produces, and every output is reviewed by the business analyst before it is used.
+> Notes from this session will be processed with AI skill BA-skills, approved by the company ([CONTEXT.md](<library glossary link>)). Every output is reviewed by the BA before it is used.
+
+`<library glossary link>` is the address of the library's `CONTEXT.md` where the company publishes it: TBD.
 
 This is mandatory and cannot be removed.
 

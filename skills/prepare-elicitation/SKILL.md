@@ -43,6 +43,8 @@ Read `INITIATIVE.md` and `stakeholders.md` and run the clearance check. In a cha
 
 Needed from the BA: technique (interview or questionnaire) · participants (named from the register) · goals · date, if known. Ask for whatever is missing in one message, then wait.
 
+A participant missing from the register is added as `references/workspace.md` describes.
+
 Done when technique, participants and goals are known and every participant is in the register.
 
 ## 2. Gather what to cover

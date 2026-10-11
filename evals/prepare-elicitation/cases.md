@@ -44,4 +44,7 @@ Run each case in a fresh session of the named runtime, with only this skill load
 - **Runtime:** any.
 - **Prompt:** "Prepare an interview with the Finance Director."
 - **Checks:**
-  - [ ] Says the Finance Director is not in the stakeholder register and asks the BA to add them before continuing.
+  - [ ] Says the Finance Director is not in the stakeholder register and asks for their register columns (or for the BA to add them by hand) before continuing.
+- **Then reply** with a name, role, unit, interest, influence and approver flag.
+- **Checks:**
+  - [ ] Appends exactly one row with those values to `stakeholders.md`, other columns `TBD`, existing rows unchanged.

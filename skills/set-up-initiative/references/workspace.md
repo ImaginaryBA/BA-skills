@@ -24,6 +24,10 @@ Folder name: initiative code, a hyphen, then the initiative name in lowercase wi
 - **Agentic runtime** (can write files): write each file to its path, then show the folder tree of what was created or changed.
 - **Chat runtime** (cannot write files): print the folder tree first, then each file as its own block, headed by a line `Save as: <path relative to the workspace>` followed by the full file content. The BA saves each block. Always print complete files, never fragments or diffs.
 
+## Adding a stakeholder
+
+When a skill needs a stakeholder who is not in `stakeholders.md`, it asks the BA for that person's register columns and, once the BA confirms, appends one row with exactly those values (unknown columns read `TBD`). It never changes existing rows. The BA may also add the row by hand.
+
 ## Reading the workspace
 
 Before working, a skill needs `INITIATIVE.md`. In an agentic runtime, read it from the workspace. In a chat runtime, if the BA has not attached it, ask for it and stop.

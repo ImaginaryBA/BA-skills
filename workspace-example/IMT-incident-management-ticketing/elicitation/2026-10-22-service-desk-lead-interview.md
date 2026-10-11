@@ -28,7 +28,7 @@
 ### Opening (3 min)
 - Thank you for your time. Today we want to understand service-level warnings, incident search, and how incidents reach resolver groups.
 - I will take notes and share the findings with you to confirm before we use them.
-- AI disclosure: "Notes from this session will be processed with an AI tool approved by the company. Your name will be replaced by your role in anything the tool produces, and every output is reviewed by the business analyst before it is used."
+- AI disclosure: "Notes from this session will be processed with AI skill BA-skills, approved by the company ([CONTEXT.md](<library glossary link>)). Every output is reviewed by the BA before it is used."
 
 ### Context (4 min)
 1. How does your team find out today that an incident is close to its service-level deadline?
