@@ -17,6 +17,8 @@ Business requirements always live in their own set, `requirements/business-requi
    | Version | 0.1 |
    | Status | draft |
    | Business analyst | <BA name> |
+   | Validated by | <stakeholder roles, filled by the BA> |
+   | Validated on | <YYYY-MM-DD, filled by the BA> |
    | Confluence page | TBD |
 
 2. One `## <Class name>` section per class present, in the order BR, SR, FR, NFR, TR.
@@ -59,7 +61,7 @@ One requirement per statement. Use the initiative glossary's terms.
 - **Priority**: always `TBD` at creation; prioritisation is a stakeholder decision.
 - **Source**: finding IDs. A BR drafted from the initiative's business need may cite `Business need`.
 - **Traces to**: SR, FR, NFR and TR trace to at least one BR; an FR may also trace to the SR it satisfies. A BR traces to `Business need`.
-- **Status** values, in order: `draft`, `verified`, `validated`, `published`, `approved`, then `retired` or `superseded`.
+- **Status** values, in order: `draft`, `verified`, `validated`, `published`, `approved`, then `retired` or `superseded`. Only the BA sets `validated`, by hand, after filling `Validated by` and `Validated on` in the set header.
 
 ## Open questions
 
@@ -75,4 +77,5 @@ Conflicts between findings are listed here and never resolved by a skill.
 
 - A **draft** set may gain new items and open questions appended at the end of their sections. Each change raises the version by 0.1.
 - Existing items are edited by one skill only, `check-requirement-quality`, in two ways, each item by each item with the BA's explicit approval: applying a rewrite the BA picked, and setting `Status`, `Reviewer` and `Reviewed on` when the BA confirms `verified`. No skill removes an item.
+- `prepare-for-publication` makes one edit, after the BA confirms the page is live and gives its link: set Status `published` on the set and every item, and fill `Confluence page`. From then on the file is a frozen copy.
 - A **published** set is a frozen copy: never changed. New needs go into a new set.

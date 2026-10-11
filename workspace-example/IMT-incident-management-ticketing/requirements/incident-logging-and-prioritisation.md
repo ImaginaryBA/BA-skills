@@ -7,6 +7,8 @@
 | Version | 0.1 |
 | Status | draft |
 | Business analyst | Alex Rivera |
+| Validated by | |
+| Validated on | |
 | Confluence page | TBD |
 
 ## Stakeholder requirements

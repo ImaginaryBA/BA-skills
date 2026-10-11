@@ -7,6 +7,8 @@
 | Version | 0.1 |
 | Status | draft |
 | Business analyst | <BA name> |
+| Validated by | |
+| Validated on | |
 | Confluence page | TBD |
 
 ## <Class name>
