@@ -25,9 +25,7 @@ If the runtime's name is unknown, ask the BA.
 
 Every interview guide opening and every questionnaire introduction tells participants, in these words:
 
-> Notes from this session will be processed with AI skill BA-skills, approved by the company ([CONTEXT.md](<library glossary link>)). Every output is reviewed by the BA before it is used.
-
-`<library glossary link>` is the address of the library's `CONTEXT.md` where the company publishes it: TBD.
+> Notes from this session will be processed with AI skill BA-skills, approved by the company ([CONTEXT.md](https://github.com/ImaginaryBA/BA-skills/blob/main/CONTEXT.md)). Every output is reviewed by the BA before it is used.
 
 This is mandatory and cannot be removed.
 

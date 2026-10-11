@@ -84,7 +84,7 @@ If the scope has to shrink, cut skill 8 first.
 
 - **Phase 2, analysis depth:** current state, future state, SWOT, Porter's five forces, PESTLE, gap analysis, business case, risk analysis. Also use cases and scenarios, process models (Mermaid), data models, business rules, design options, and facilitation packs for workshops and brainstorming.
 - **Phase 3, before-publication lifecycle and reuse:** trace queries, prioritisation (MoSCoW, WSJF, Kano), impact analysis on *unpublished* sets, and a reuse catalogue built from **frozen copies** on the drive. It is not built from Confluence, because of the data policy.
-- **Phase 4, rollout:** planning skills (BA approach, stakeholder analysis, governance), solution evaluation skills, `INSTALL.md` for each runtime, and moving the library to the company's own git host.
+- **Phase 4, rollout:** planning skills (BA approach, stakeholder analysis, governance), solution evaluation skills, `INSTALL.md` for each runtime.
 - **Future options (deferred):** generated adapters for each runtime (ADR-0005) and direct publication through a connector (ADR-0002).
 
 ## 6. How each skill gets built
@@ -100,4 +100,4 @@ If the scope has to shrink, cut skill 8 first.
 - [ ] Choose the pilot initiative: one that is in early elicitation now, with at least one pilot BA on a runtime other than Claude.
 - [ ] Take baselines for the interview guide, the elicitation summary, the story set, and peer-review defects.
 - [ ] Confirm which runtimes are cleared for which data classifications.
-- [ ] Check IP ownership before anything company-specific goes into this repo. It stays in this repo until the pilot proves value, then moves to the company git host.
+- [x] Library home: this public repo, under the company's open-source program (ADR-0016). Company-specific content still never goes in it.
