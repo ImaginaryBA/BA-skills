@@ -84,6 +84,6 @@ Done when every candidate finding is the source of at least one item or is liste
 Deliver the set files, any new elicitation file, and the updated ID register as `references/workspace.md` describes. Then list:
 - the business requirements awaiting the BA's and sponsor's confirmation;
 - the open questions, grouped by whom to ask;
-- next step: check quality with `check-requirement-quality`.
+- next step: check quality with `check-requirement-quality`; when open questions outnumber the items drafted, suggest sharpening the need with `grill-ba` first.
 
 Done when the BA has every file and both lists.

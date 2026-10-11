@@ -68,7 +68,7 @@ draft ─► verified ─► validated ─► published ─► approved ─► r
 |---|---|---|---|
 | 1 | `ask-ba` | Routes a described situation to the right skill. In chat runtimes it's the "start here" guide: which skill to attach next and which inputs to bring | — |
 | 2 | `set-up-initiative` | Creates the workspace, `INITIATIVE.md`, data classification, initiative code and stakeholder register | Planning: information management |
-| 3 | `grill-stakeholder` | A questioning primitive used by other skills, or directly to sharpen a need | Elicitation: interviews |
+| 3 | `grill-ba` | Questions the BA in rounds to sharpen a vague need; records the BA's answers as unconfirmed findings and the unknowns as questions for stakeholders | Elicitation: interviews |
 | 4 | `prepare-elicitation` | Produces an interview guide or questionnaire from goals and stakeholders | Elicitation: prepare |
 | 5 | `notes-to-findings` | Turns notes or a transcript into confirmed findings, conflicts and open questions, with names replaced by roles | Elicitation: conduct, confirm |
 | 6 | `findings-to-requirements` | Builds a requirement set with IDs, classes, sources and AI use labels | Requirements Analysis & Design Definition: specify and model |

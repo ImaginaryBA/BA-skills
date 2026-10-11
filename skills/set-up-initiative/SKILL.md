@@ -77,6 +77,6 @@ Done when no placeholder in angle brackets remains: every field is filled from t
 
 Deliver the two files and the empty folders `elicitation/`, `requirements/`, `stories/`, `decisions/`, `reviews/` as `references/workspace.md` describes for this runtime. In a chat runtime, list the empty folders in the tree for the BA to create.
 
-Then list every `TBD` field and suggest the next step: prepare elicitation with `prepare-elicitation`.
+Then list every `TBD` field and suggest the next step: prepare elicitation with `prepare-elicitation`, or, when the business need is still vague, sharpen it first with `grill-ba`.
 
 Done when the BA has the complete folder tree and both files, and every `TBD` is listed.

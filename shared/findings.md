@@ -10,6 +10,8 @@ One file per session or source document in `elicitation/`, named `<YYYY-MM-DD>-<
 2. `## Notes`: cleaned notes written by `notes-to-findings` from what the BA pasted in the chat. Raw notes and transcripts are never saved: names become roles and small talk is dropped, content is kept.
 3. `## Findings`: the findings table below.
 
+A file from `grill-ba` has Source `Grilling`, `## Notes`, `## Findings` and `## Questions for stakeholders` (columns #, Question, Ask, Topic).
+
 A file made from raw input or a workshop may hold only the header and `## Findings`.
 
 | ID | Finding | Stakeholder role | Confirmed (yes/no) | AI use | Answers |
@@ -18,7 +20,7 @@ A file made from raw input or a workshop may hold only the header and `## Findin
 
 - **ID**: from the ID register, class `FN` (`references/ids.md`).
 - **Finding**: one statement, in the stakeholder's meaning, without names (`references/data-classification.md`).
-- **Stakeholder role**: as written in `stakeholders.md`.
+- **Stakeholder role**: as written in `stakeholders.md`, or `Business analyst` for the BA's own understanding (from `grill-ba`); those findings need a stakeholder's confirmation like any other.
 - **Confirmed**: `yes` only when the stakeholder has confirmed the BA's understanding of it.
 - **AI use**: per `references/ai-use.md`.
 - **Answers**: the open question this finding answers (e.g. `incident-logging-and-prioritisation OQ 2`), or `—`.
