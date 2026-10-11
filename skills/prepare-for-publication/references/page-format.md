@@ -26,7 +26,7 @@ Goes inside Confluence's Page Properties macro, so Confluence can build a requir
 
 1. One `## <Class name>` section per class present, in the order BR, SR, FR, NFR, TR.
 2. Per item, `### <ID> <statement>` and a trimmed table, in this order: Class · Rationale · Threshold · Priority · Source · Traces to · Reused from · AI use. Leave out Threshold and Reused from when they read `—`, and Priority while it reads `TBD`. Status and reviewer fields are never shown.
-3. `## Open questions`, copied from the set, only when the set has any.
+3. `## Open questions`: only the questions whose `Answered by` reads `—`, with columns #, Question, Findings involved, Ask. Leave the section out when none remain.
 4. The footer line from `references/ai-use.md`.
 
 ## Page label

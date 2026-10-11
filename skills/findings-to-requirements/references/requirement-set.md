@@ -67,15 +67,16 @@ One requirement per statement. Use the initiative glossary's terms.
 
 A table at the end of the set:
 
-| # | Question | Findings involved | Ask |
-|---|---|---|---|
-| 1 | <conflict, gap or missing rationale or threshold> | <finding IDs> | <stakeholder role> |
+| # | Question | Findings involved | Ask | Answered by |
+|---|---|---|---|---|
+| 1 | <conflict, gap or missing rationale or threshold> | <finding IDs> | <stakeholder role> | — |
 
-Conflicts between findings are listed here and never resolved by a skill.
+Conflicts between findings are listed here and never resolved by a skill. `Answered by` holds the confirmed finding IDs that answer the question, filled by `findings-to-requirements` when it uses them; the question row itself is never changed or removed.
 
 ## Changing a set
 
 - A **draft** set may gain new items and open questions appended at the end of their sections. Each change raises the version by 0.1.
 - Existing items are edited by one skill only, `check-requirement-quality`, in two ways, each item by each item with the BA's explicit approval: applying a rewrite the BA picked, and setting `Status`, `Reviewer` and `Reviewed on` when the BA confirms `verified`. No skill removes an item.
+- `findings-to-requirements` fills an open question's `Answered by` when it uses a confirmed finding that answers it.
 - `prepare-for-publication` makes one edit, after the BA confirms the page is live and gives its link: set Status `published` on the set and every item, and fill `Confluence page`. From then on the file is a frozen copy.
 - A **published** set is a frozen copy: never changed. New needs go into a new set.

@@ -99,12 +99,12 @@
 
 ## Open questions
 
-| # | Question | Findings involved | Ask |
-|---|---|---|---|
-| 1 | Should incidents be assigned automatically by category, or triaged manually first? The two findings conflict. | IMT-FN-005, IMT-FN-006 | Head of IT Operations, Service Desk Lead |
-| 2 | How long before a breach should the team lead be warned (IMT-FR-003)? | IMT-FN-007 | Service Desk Lead |
-| 3 | What search response time is acceptable, and why does search speed matter to agents (IMT-NFR-001)? | IMT-FN-008 | Service Desk Lead |
-| 4 | How long must incident records be kept? Not yet confirmed. | IMT-FN-009 | Information Security Officer |
+| # | Question | Findings involved | Ask | Answered by |
+|---|---|---|---|---|
+| 1 | Should incidents be assigned automatically by category, or triaged manually first? The two findings conflict. | IMT-FN-005, IMT-FN-006 | Head of IT Operations, Service Desk Lead | — |
+| 2 | How long before a breach should the team lead be warned (IMT-FR-003)? | IMT-FN-007 | Service Desk Lead | — |
+| 3 | What search response time is acceptable, and why does search speed matter to agents (IMT-NFR-001)? | IMT-FN-008 | Service Desk Lead | — |
+| 4 | How long must incident records be kept? Not yet confirmed. | IMT-FN-009 | Information Security Officer | — |
 
 ---
 Produced with findings-to-requirements v0.1.0 in Claude Code, 2026-10-13.

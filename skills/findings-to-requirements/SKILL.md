@@ -75,7 +75,7 @@ For each confirmed set, write items per `references/requirement-set.md`:
 - status `draft`, priority `TBD`, AI use `AI-generated`, reviewer fields empty;
 - new IDs from the register, in order.
 
-Extending a draft set: append only, raise its version by 0.1. Business requirements go to `requirements/business-requirements.md`, created on first use.
+Extending a draft set: append only, raise its version by 0.1. When a confirmed finding used here names an open question in its `Answers` column, fill that question's `Answered by` with the finding ID. Business requirements go to `requirements/business-requirements.md`, created on first use.
 
 Done when every candidate finding is the source of at least one item or is listed as an open question, and every item has all eleven fields.
 

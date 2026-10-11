@@ -4,4 +4,6 @@ Skills append to draft requirement sets but never rewrite what is there, so the 
 
 A second belongs to `notes-to-findings`: it changes a finding's `Confirmed` value from `no` to `yes` exactly as the BA reports the stakeholder's confirmation, and nothing else.
 
-A third belongs to `prepare-for-publication`: once the BA confirms the page is live in Confluence and gives its link, it sets Status `published` on the set and every item and records the link, freezing the file. Done by hand this edit is easy to leave half-finished, and it marks the exact moment the file stops changing.
+A third belongs to `findings-to-requirements`: it fills an open question's `Answered by` with the confirmed finding that answers it, so answered questions stop looking open; the question itself is never changed or removed.
+
+A fourth belongs to `prepare-for-publication`: once the BA confirms the page is live in Confluence and gives its link, it sets Status `published` on the set and every item and records the link, freezing the file. Done by hand this edit is easy to leave half-finished, and it marks the exact moment the file stops changing.

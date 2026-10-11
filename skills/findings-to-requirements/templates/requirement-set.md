@@ -31,8 +31,8 @@
 
 ## Open questions
 
-| # | Question | Findings involved | Ask |
-|---|---|---|---|
+| # | Question | Findings involved | Ask | Answered by |
+|---|---|---|---|---|
 
 ---
 Produced with findings-to-requirements v<version> in <runtime>, <YYYY-MM-DD>.

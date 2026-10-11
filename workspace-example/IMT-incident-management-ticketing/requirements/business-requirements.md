@@ -47,10 +47,10 @@
 
 ## Open questions
 
-| # | Question | Findings involved | Ask |
-|---|---|---|---|
-| 1 | What breach rate, by when, would count as success for IMT-BR-001? | IMT-FN-007 | Head of IT Operations |
-| 2 | By what date must the legacy tool be retired (IMT-BR-002)? | — | Head of IT Operations |
+| # | Question | Findings involved | Ask | Answered by |
+|---|---|---|---|---|
+| 1 | What breach rate, by when, would count as success for IMT-BR-001? | IMT-FN-007 | Head of IT Operations | — |
+| 2 | By what date must the legacy tool be retired (IMT-BR-002)? | — | Head of IT Operations | — |
 
 ---
 Produced with findings-to-requirements v0.1.0 in Claude Code, 2026-10-13.

@@ -9,7 +9,7 @@ Run each case in a fresh session of the named runtime, with only this skill load
 - **Runtime:** Claude Code, validated setup.
 - **Prompt:** "Prepare the incident logging set for Confluence."
 - **Checks:**
-  - [ ] Output matches `reference-page.md` in content: title, Part 1, Part 2 in class order, open questions, footer.
+  - [ ] Output matches `reference-page.md` in content: title, Part 1, Part 2 in class order, the unanswered open questions (four columns), footer.
   - [ ] Statements, rationale, thresholds and sources are copied word for word.
   - [ ] Threshold is left out where the set reads `—`; Priority is left out while `TBD`; no Status or reviewer rows appear.
   - [ ] Proposes the label `ai-generated` and says the BA decides.
