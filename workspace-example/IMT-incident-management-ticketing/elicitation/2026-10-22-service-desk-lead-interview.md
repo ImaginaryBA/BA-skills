@@ -53,7 +53,7 @@
 
 ### Closing (4 min)
 - Recap the main points back to the participant.
-- Findings will be shared in writing for confirmation within two working days.
+- Findings will be shared with you in writing to confirm before they are used.
 - Note that open question 1 also needs the Head of IT Operations' view.
 
 ---

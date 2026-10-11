@@ -20,7 +20,7 @@ Authored here, not generated from `shared/`.
 
 Open questions from requirement sets go into the topic they belong to, each marked with its reference (e.g. `incident-logging-and-prioritisation OQ 2`).
 
-When the topics do not fit in 19 minutes, split them across sessions of 30 minutes each, every session with its own opening, context and closing, ordered so that the most blocking open questions come first.
+When the topics do not fit in 19 minutes, split them across sessions of 30 minutes each, every session with its own opening, context and closing, ordered so that open questions on business requirements come first, then the rest in the order of the goals.
 
 ## Questionnaire
 
