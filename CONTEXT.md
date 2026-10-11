@@ -45,6 +45,10 @@ _Avoid_: Fit criterion, acceptance criteria (those belong to stories)
 **Rationale**:
 One sentence on why a requirement exists, drawn from its source findings; `TBD` plus an open question when the source does not say.
 
+**Elicitation session**:
+One 30-minute interview or one questionnaire with named participants, kept as one file in `elicitation/` from plan to findings. Longer topics are split across several sessions.
+_Avoid_: Meeting, call
+
 **Open question**:
 A conflict between findings, or a gap too vague to state as a requirement, listed with the findings involved and who to ask. Never silently resolved.
 

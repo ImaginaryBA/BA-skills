@@ -6,7 +6,13 @@ A finding is one statement from elicitation, attributed to a stakeholder role. E
 
 ## Elicitation file
 
-One file per session or source document in `elicitation/`, named `<YYYY-MM-DD>-<slug>.md` (e.g. `2026-10-12-service-desk-workshop.md`). It starts with a header table (Source, Date, Participants as roles) and ends with a findings table:
+One file per session or source document in `elicitation/`, named `<YYYY-MM-DD>-<slug>.md` (e.g. `2026-10-12-service-desk-workshop.md`). It starts with a header table (Source, Date, Participants as roles) and grows through the session's life, each section added by the skill that owns it:
+
+1. `## Plan` and `## Interview guide` or `## Questionnaire`: `prepare-elicitation`.
+2. `## Notes`: the BA's notes or transcript, then `notes-to-findings`.
+3. `## Findings`: the findings table below.
+
+A file made from raw input or a workshop may hold only the header and `## Findings`.
 
 | ID | Finding | Stakeholder role | Confirmed (yes/no) | AI use |
 |---|---|---|---|---|

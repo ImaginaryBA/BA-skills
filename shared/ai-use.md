@@ -21,6 +21,14 @@ Every file a skill creates or changes ends with one line:
 
 If the runtime's name is unknown, ask the BA.
 
+## Disclosure to stakeholders
+
+Every interview guide opening and every questionnaire introduction tells participants, in these words unless the company provides its own:
+
+> Notes from this session will be processed with an AI tool approved by the company. Your name will be replaced by your role in anything the tool produces, and every output is reviewed by the business analyst before it is used.
+
+This is mandatory and cannot be removed.
+
 ## Labels in delivery tools
 
 On publication, the Confluence page gets the label `ai-generated` if any item on it is AI-generated, otherwise `ai-assisted`; the skill proposes it and the BA decides. Each Jira story gets the label matching its own AI use.
