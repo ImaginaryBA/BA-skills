@@ -1,6 +1,6 @@
 # Evals: findings-to-requirements
 
-Run each case in a fresh session of the named runtime, with only this skill loaded. Unless stated, start from a copy of `workspace-example/IMT-incident-management-ticketing/` with `requirements/` emptied and the ID register reset to `BR 000, SR 000, FR 000, NFR 000` (FN stays at `009`). The two files in the example's `requirements/` are a reference answer for case 1, not the only correct one.
+Run each case in a fresh session of the named runtime, with only this skill loaded. Unless stated, start from a copy of `workspace-example/IMT-incident-management-ticketing/` with `requirements/` emptied and the ID register reset to `BR 000, SR 000, FR 000, NFR 000` (FN stays as it is). The two files in the example's `requirements/` are a reference answer for case 1, not the only correct one.
 
 ## 1. Findings file, agentic runtime
 

@@ -44,7 +44,7 @@ The IT service desk handles incidents in a legacy ticketing tool that is out of 
 | NFR | Non-functional requirement | 001 |
 | TR | Transition requirement | 000 |
 | ST | Delivery story | 000 |
-| FN | Elicitation finding | 009 |
+| FN | Elicitation finding | 013 |
 
 ---
 Produced with set-up-initiative v0.1.0 in Claude Code, 2026-10-08.

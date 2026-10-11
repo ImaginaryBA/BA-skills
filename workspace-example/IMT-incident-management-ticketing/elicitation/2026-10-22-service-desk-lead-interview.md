@@ -56,5 +56,30 @@
 - Findings will be shared with you in writing to confirm before they are used.
 - Note that open question 1 also needs the Head of IT Operations' view.
 
+## Notes
+
+**Service-level warnings**
+- Team leads currently find out about breaches from the weekly report, after the fact.
+- When warned, a team lead needs about 20 minutes to reassign or escalate an incident.
+- The same 30-minute warning would work for all priorities; there is no need to vary it.
+
+**Searching past incidents**
+- Agents search past incidents several times a shift, mostly to reuse a known fix.
+- Anything over 3 seconds breaks the agent's flow during a call.
+
+**Getting incidents to resolver groups**
+- About a third of incidents are routed to the wrong resolver group today.
+- Network and access incidents could skip the service desk check; everything else still needs it.
+
+## Findings
+
+| ID | Finding | Stakeholder role | Confirmed (yes/no) | AI use | Answers |
+|---|---|---|---|---|---|
+| IMT-FN-010 | Team leads need a warning 30 minutes before an incident breaches its resolution service level, the same for every priority. | Service Desk Lead | no | AI-generated | incident-logging-and-prioritisation OQ 2 |
+| IMT-FN-011 | Agents search past incidents several times a shift, mostly to reuse a known fix. | Service Desk Lead | no | AI-generated | incident-logging-and-prioritisation OQ 3 |
+| IMT-FN-012 | A search that takes more than 3 seconds disrupts an agent during a call. | Service Desk Lead | no | AI-generated | incident-logging-and-prioritisation OQ 3 |
+| IMT-FN-013 | Network and access incidents can be assigned automatically; all other incidents need a service desk check first. | Service Desk Lead | no | AI-generated | incident-logging-and-prioritisation OQ 1 |
+
 ---
 Produced with prepare-elicitation v0.1.0 in Claude Code, 2026-10-15.
+Produced with notes-to-findings v0.1.0 in Claude Code, 2026-10-22.
