@@ -73,7 +73,10 @@ A version of a requirement set generated for pasting into Confluence: a page-pro
 A Jira story drafted by the BA from one or more validated (or later) requirements, linking back to their requirement IDs. It is a delivery artifact, never the only home of a requirement.
 
 **Story set**:
-The workspace file holding the delivery stories for one epic or feature, each with a temporary ID (e.g. `CLM-ST-007`) until its Jira key is recorded.
+The workspace file holding the delivery stories drafted from one requirement set (same slug, in `stories/`), each with an ID (e.g. `IMT-ST-007`) and, once created in Jira, its Jira key.
+
+**Story status**:
+`draft` as drafted, `ready` once the BA has reviewed it, `created` once its Jira key is recorded.
 _Avoid_: Ticket, Jira requirement
 
 ### Requirement lifecycle
