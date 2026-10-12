@@ -27,9 +27,9 @@ Run each case in a fresh session of the named runtime, with only this skill load
 
 ## 3. Apply rewrites
 
-- **Continue case 1, reply:** "Apply rewrite 7 with a warning period of 30 minutes."
+- **Continue case 1, reply:** "Apply the rewrite that adds the warning period to IMT-FR-003, with a warning period of 30 minutes." (use the issue number the report gave that rewrite)
 - **Checks:**
-  - [ ] IMT-SR-001's statement now names the 30-minute warning period; its AI use is unchanged (wording only).
+  - [ ] IMT-FR-003's statement now names the 30-minute warning period, and its AI use matches what the report said for that rewrite.
   - [ ] No other item changes, and the version rises once.
 
 ## 4. Vague and compound wording

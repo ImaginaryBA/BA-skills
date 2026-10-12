@@ -7,7 +7,7 @@ description: >-
   Use when a BA is unsure which skill to use, wants a status of their
   workspace, or asks about coverage.
 metadata:
-  version: 0.1.0
+  version: 0.1.1
   babok:
     knowledge_area: "3 Business Analysis Planning and Monitoring"
     tasks: []
@@ -30,6 +30,8 @@ The front door to BA-skills. It routes; it never does another skill's work. It r
 References (read before step 1): `references/routes.md`, `references/coverage.md`, `references/workspace.md`, `references/data-classification.md`.
 
 ## 1. Find the workspace
+
+Skip steps 1 and 2 when the answer does not depend on an initiative's state: what BA-skills covers, a situation no skill handles, or what to do with a published set. Go to step 3.
 
 - **Agentic runtime**: search the working folder for `INITIATIVE.md` files. Show the BA what was found (one initiative, several, or none) and ask which one to use; wait. Then run the clearance check.
 - **Chat runtime**: work from the BA's description and whatever files are attached.

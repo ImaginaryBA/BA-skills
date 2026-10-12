@@ -35,6 +35,7 @@ Run each case in a fresh session of the named runtime, with only this skill load
 
 - **Runtime:** Claude Code, with the example's `requirements/` files and register left in place.
 - **Prompt:** "Add this confirmed finding from the Service Desk Lead to the logging set: agents need to attach screenshots to incidents."
+- **Then reply:** "Confirmed."
 - **Checks:**
   - [ ] Appends a new item with ID `IMT-FR-004`; existing items are byte-for-byte unchanged.
   - [ ] Set version becomes 0.2.

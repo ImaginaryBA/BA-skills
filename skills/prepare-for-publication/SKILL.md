@@ -7,7 +7,7 @@ description: >-
   page is live, freeze the workspace file as published. Use when a BA is
   ready to send a requirement set for approval in Confluence.
 metadata:
-  version: 0.1.0
+  version: 0.1.1
   babok:
     knowledge_area: "5 Requirements Life Cycle Management"
     tasks:
@@ -65,6 +65,7 @@ Done when the BA has replied with the page link.
 Only after the BA confirms the page is live:
 - set the set header's Status and every item's Status to `published`;
 - fill `Confluence page` with the link;
+- add this skill's footer line (`references/ai-use.md`);
 - leave everything else exactly as it was, version included.
 
 Deliver the frozen set as `references/workspace.md` describes. Tell the BA that approval now happens in Confluence, that this file is a frozen copy no skill will change, and that delivery stories can be drafted from it with `requirements-to-stories`.

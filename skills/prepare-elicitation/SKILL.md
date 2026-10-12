@@ -7,7 +7,7 @@ description: >-
   the mandatory AI disclosure. Use before talking to or surveying
   stakeholders.
 metadata:
-  version: 0.1.0
+  version: 0.1.1
   babok:
     knowledge_area: "4 Elicitation and Collaboration"
     tasks:
@@ -52,7 +52,7 @@ Done when technique, participants and goals are known and every participant is i
 - The BA's goals.
 - Every open question in draft requirement sets (including `business-requirements.md`) whose `Ask` names a participant's role and whose `Answered by` reads `—`.
 - Every row in a `## Questions for stakeholders` section (from `grill-ba`) whose `Ask` names a participant's role.
-- Gaps: list each approver and each high-influence stakeholder in the register who is not a participant and appears in no earlier elicitation file. Show these to the BA as a warning; the BA decides.
+- Gaps: list each approver and each high-influence stakeholder in the register who is not a participant and appears in no earlier elicitation file. Show these to the BA as a warning that does not block: carry on, and repeat the gaps at delivery so the BA can decide.
 
 Done when every goal and matching open question is listed, and the gaps are shown.
 

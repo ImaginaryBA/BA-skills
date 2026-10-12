@@ -26,7 +26,7 @@ Folder name: initiative code, a hyphen, then the initiative name in lowercase wi
 
 ## Adding a stakeholder
 
-When a skill needs a stakeholder who is not in `stakeholders.md`, it asks the BA for that person's register columns and, once the BA confirms, appends one row with exactly those values (unknown columns read `TBD`). It never changes existing rows. The BA may also add the row by hand.
+When a skill needs a stakeholder who is not in `stakeholders.md`, it asks the BA for that person's register columns, shows the row it would add (unknown columns read `TBD`), and appends it only after the BA explicitly confirms that row. It never changes existing rows. The BA may also add the row by hand.
 
 ## Reading the workspace
 

@@ -15,7 +15,7 @@ Rules:
 
 ## Footer
 
-Every file a skill creates or changes ends with one line:
+Every file a skill creates ends with one line, and every file a skill changes gets one more line added below the existing ones (never replacing them), so the file keeps its history:
 
 `Produced with <skill-name> v<version> in <runtime>, <YYYY-MM-DD>.`
 
