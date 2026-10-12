@@ -1,0 +1,3 @@
+# One portable SKILL.md source, with full and manual support levels
+
+Each skill is written once as a portable `SKILL.md` in the open Agent Skills format. In an agentic runtime it triggers by itself and reads and writes the workspace; in a chat runtime the BA attaches the skill and its inputs and saves the output. So every skill declares its inputs and outputs explicitly and never depends on reaching the workspace itself. Generated per-runtime adapters are deferred, built only for a runtime real users depend on. The first exists: Open WebUI imports a skill as a single markdown file, so `scripts/sync_shared.py` also builds `dist/open-webui/<skill>.md`, each skill with its references and templates inlined. It is generated, never edited by hand.

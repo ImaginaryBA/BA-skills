@@ -1,0 +1,3 @@
+# After publication, the AI never touches a requirement set again
+
+Once a requirement set is published, Confluence is its only master and the BA changes it directly in Confluence; skills never read, refresh or modify a published set. Company policy only allows local models to process Confluence content, and the local models are not trusted to do this job, so we dropped a planned `refresh-from-confluence` skill. The workspace file becomes a frozen copy kept for history, reuse and story drafting. Any new requirements raised later go into a new requirement set, continuing the initiative's ID sequence (ADR 0008).
