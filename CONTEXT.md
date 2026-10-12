@@ -93,8 +93,20 @@ _Avoid_: Assessment, study, deliverable
 Which of the fixed types an analysis is; decides its file name and its sections.
 
 **Evidence**:
-What an analysis row or item rests on: finding IDs, or a document the BA supplied, named by title and date. Every row and item has it.
+What an analysis row or item rests on: finding IDs, or a supplied document named by title and date. Every row and item has it. A finding not yet confirmed counts, marked `(unconfirmed)`.
 _Avoid_: Source (that is a requirement's field and holds findings only)
+
+**Supplied document**:
+An existing document the BA gives a skill as evidence (a process manual, a performance report, a vendor notice), listed in the analysis's sources with its owner role and date.
+_Avoid_: Attachment, reference
+
+**Baseline measure**:
+A figure describing how the current state performs today (e.g. about 5 minutes to re-key an alert), taken only from evidence. The yardstick the business case measures improvement against.
+_Avoid_: KPI, metric
+
+**Capability map**:
+The business architecture team's model of what the business can do. Owned and changed only by that team; analyses cite it as a supplied document and never add to it.
+_Avoid_: Capability model, function map
 
 **Assumption**:
 An analysis statement without evidence, marked `Assumption` and listed as an open question with the role to ask. Never presented as fact.
