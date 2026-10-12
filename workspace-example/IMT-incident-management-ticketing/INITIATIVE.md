@@ -33,6 +33,7 @@ The IT service desk handles incidents in a legacy ticketing tool that is out of 
 | Incident | An unplanned interruption or reduction in quality of an IT service. | Ticket, issue, fault |
 | Priority | The order in which an incident is worked, derived from impact and urgency. | Severity |
 | Service level | The agreed maximum time to respond to and resolve an incident of a given priority. | SLA time, deadline |
+| Service desk agent | A first-line person who logs, works and resolves incidents; a user role, not a stakeholder. | Analyst, operator |
 
 ## ID register
 

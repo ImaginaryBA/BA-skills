@@ -10,7 +10,7 @@ One file in `stories/` per requirement set, with the same slug (`stories/inciden
 
 `### <ST ID> <short title>`, then the statement, an item table, and acceptance criteria.
 
-**Statement:** As a `<register role>`, I want `<capability>`, so that `<benefit, from the requirement's rationale>`.
+**Statement:** As a `<story role>`, I want `<capability>`, so that `<benefit, from the requirement's rationale>`. A story role is a role from `stakeholders.md` or a user role defined in the initiative glossary; when the right user role is missing, propose a glossary entry for the BA to confirm.
 
 | Field | Value |
 |---|---|

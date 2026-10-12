@@ -12,7 +12,7 @@ Reference answer for case 1: drafted from the validated logging set. Wording may
 
 ### IMT-ST-001 Create incidents from critical alerts
 
-**Statement:** As a Service Desk Lead, I want an incident created from each critical monitoring alert, so that agents no longer re-key alerts by hand and mistype configuration items.
+**Statement:** As a Service desk agent, I want an incident created from each critical monitoring alert, so that agents no longer re-key alerts by hand and mistype configuration items.
 
 | Field | Value |
 |---|---|
@@ -78,7 +78,7 @@ Scenario: Warning before breach
 
 ### IMT-ST-004 Search past incidents within the agreed response time
 
-**Statement:** As a Service Desk Lead, I want incident search results returned within the agreed response time, so that TBD.
+**Statement:** As a Service desk agent, I want incident search results returned within the agreed response time, so that TBD.
 
 | Field | Value |
 |---|---|

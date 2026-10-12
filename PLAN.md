@@ -5,7 +5,7 @@ A BABOK-aligned library of portable agent skills for business analysis, in the s
 - Vocabulary: [`CONTEXT.md`](CONTEXT.md). Its terms are used in this plan exactly as defined there.
 - Decisions: [`docs/adr/`](docs/adr). Each one is referenced below as (ADR-nnnn).
 
-Status: **design agreed through the grilling session; ready to build Phase 1.**
+Status: **Phase 1 skills drafted (all nine, with evals); next: run the evals in Claude Code and one other runtime, then pilot.**
 
 ---
 
@@ -40,13 +40,13 @@ Non-goals for the first version: direct Confluence or Jira integration, per-runt
   stakeholders.md         # register: name, role, unit, interest, influence, approver, engagement, notes
   elicitation/            # one file per session: plan, notes, confirmed findings
   requirements/           # one file per requirement set (ADR-0007)
-  stories/                # one file per story set (epic or feature)
+  stories/                # one story set per requirement set (same slug)
   decisions/              # initiative decisions
   reviews/                # quality reports
 ```
 
 **Inside a requirement set file:** each item has a heading followed by a Field | Value metadata table:
-`id` (e.g. `CLM-FR-012`, ADR-0008) · `class` (BR/SR/FR/NFR/TR) · `status` · `priority` · `source` · `traces_to` · `reused_from` · `ai_use` · `reviewer` · `reviewed_on`.
+the ID and statement as the heading (e.g. `IMT-FR-012 The system shall …`, ADR-0008), then Class · Status · Priority · Rationale · Threshold · Source · Traces to · Reused from · AI use · Reviewer · Reviewed on. Full format: `shared/requirement-set.md`.
 
 **Lifecycle (ADR-0010, ADR-0009):**
 
@@ -60,7 +60,7 @@ draft ─► verified ─► validated ─► published ─► approved ─► r
 
 **Publication:** a skill produces a publish-ready page with a Page Properties block, item tables, the footer and a *proposed* page label (`ai-generated` if any item is AI-generated). The BA has the final say on the label, then pastes the page into Confluence. (ADR-0002, ADR-0004, ADR-0007)
 
-**Delivery stories:** these can be drafted once their source requirements are `validated`. They live in a story set with temporary IDs (`CLM-ST-007`) and `derived_from` links. The BA creates the stories in Jira and records each Jira key. A story is never the only place a requirement exists.
+**Delivery stories:** these can be drafted once their source requirements are `validated`. They live in a story set with IDs (`IMT-ST-007`) and `Derived from` links (ADR-0011). The BA creates the stories in Jira and records each Jira key. A story is never the only place a requirement exists.
 
 ## 4. Phase 1: the first version to pilot (9 skills)
 

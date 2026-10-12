@@ -75,6 +75,10 @@ A Jira story drafted by the BA from one or more validated (or later) requirement
 **Story set**:
 The workspace file holding the delivery stories drafted from one requirement set (same slug, in `stories/`), each with an ID (e.g. `IMT-ST-007`) and, once created in Jira, its Jira key.
 
+**Story role**:
+Who a story's "As a …" names: a role from the stakeholder register or a user role defined in the initiative glossary.
+_Avoid_: Persona, actor
+
 **Story status**:
 `draft` as drafted, `ready` once the BA has reviewed it, `created` once its Jira key is recorded.
 _Avoid_: Ticket, Jira requirement
@@ -117,7 +121,7 @@ The AI tool a BA runs skills in, e.g. Claude Code, Codex, Antigravity or Open We
 _Avoid_: Platform, harness
 
 **Agentic runtime**:
-A runtime that can read and write workspace files by itself, so skills run with full support (e.g. Claude Code, Codex, Antigravity).
+A runtime that can read and write workspace files by itself, so skills run with full support (e.g. Claude Code, Codex, Antigravity, Pi).
 
 **Chat runtime**:
 A runtime without file access, where the BA attaches the skill and its inputs and saves the output (e.g. Open WebUI).
