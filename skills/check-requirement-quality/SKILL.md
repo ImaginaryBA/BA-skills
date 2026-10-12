@@ -7,7 +7,7 @@ description: >-
   the items the BA confirms as verified. Use when a BA wants requirements
   reviewed, verified or made ready for stakeholder validation.
 metadata:
-  version: 0.1.0
+  version: 0.1.1
   babok:
     knowledge_area: 7 Requirements Analysis and Design Definition
     tasks:
@@ -39,7 +39,7 @@ References (read before step 1): `references/checks.md`, `references/requirement
 
 ## 1. Load
 
-Read `INITIATIVE.md` (glossary and business need) and run the clearance check. Ask the BA which draft sets to check; always read `requirements/business-requirements.md` with them, and the elicitation files their items cite. A set with status `published` is a frozen copy: say so and leave it out. In a chat runtime, ask for these files and wait.
+Read `INITIATIVE.md` (glossary and business need) and run the clearance check. Ask the BA which draft sets to check, and check only those. Always read `requirements/business-requirements.md` alongside them for the trace checks (its items are checked only when the BA names it), and the elicitation files their items cite. A set with status `published` is a frozen copy: say so and leave it out. In a chat runtime, ask for these files and wait.
 
 Done when the chosen draft sets, the business requirements and the cited findings are loaded.
 

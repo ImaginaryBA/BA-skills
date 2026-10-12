@@ -6,7 +6,7 @@ Skills run in Claude Code, Codex, Antigravity, Pi and similar agentic tools, and
 
 ## Start here
 
-Install the skills ([INSTALL.md](INSTALL.md)), open your initiative's folder, and ask **`ask-ba`**: "Where am I and what next?"
+Install the skills ([INSTALL.md](INSTALL.md); Open WebUI users import the single-file versions in [`dist/open-webui/`](dist/open-webui/)), open your initiative's folder, and ask **`ask-ba`**: "Where am I and what next?"
 
 ## The skills
 
@@ -33,7 +33,8 @@ BABOK coverage per task: [`skills/ask-ba/references/coverage.md`](skills/ask-ba/
 ## For contributors
 
 - Vocabulary: [`CONTEXT.md`](CONTEXT.md). Decisions: [`docs/adr/`](docs/adr/). Roadmap: [`PLAN.md`](PLAN.md).
-- Rules shared by several skills live once in [`shared/`](shared/); run `python3 scripts/sync_shared.py` after editing them (and `--check` before committing).
+- Rules shared by several skills live once in [`shared/`](shared/); run `python3 scripts/sync_shared.py` after editing them or any skill (and `--check` before committing). It also regenerates the BABOK coverage table and `dist/open-webui/`.
 - Each skill has test cases in [`evals/`](evals/).
 
 BABOK® is a registered trademark of the International Institute of Business Analysis (IIBA). This project is not affiliated with IIBA and cites BABOK by section number and name only.
+This project is released under the [MIT License](LICENSE).

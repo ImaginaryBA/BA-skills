@@ -1,6 +1,6 @@
 # Evals: check-requirement-quality
 
-Run each case in a fresh session of the named runtime, with only this skill loaded, on a copy of `workspace-example/IMT-incident-management-ticketing/` with `reviews/` emptied. The example report in `reviews/` is a reference answer for case 1.
+Run each case in a fresh session of the named runtime, with only this skill loaded, on a copy of `workspace-example/IMT-incident-management-ticketing/` with `reviews/` emptied. The example report in `reviews/` is a reference answer for case 1 (it comes from the 2026-10-12 run).
 
 ## 1. Check the example sets
 
@@ -8,9 +8,9 @@ Run each case in a fresh session of the named runtime, with only this skill load
 - **Prompt:** "Check the quality of the incident logging set."
 - **Checks:**
   - [ ] Reads `business-requirements.md` with the set without being told.
-  - [ ] Writes `reviews/incident-logging-and-prioritisation-quality-<date>.md` with a result in every column for all seven items.
+  - [ ] Writes `reviews/incident-logging-and-prioritisation-quality-<date>.md` with a result in every column for the set's five items; BRs are read for tracing but not checked.
   - [ ] Prioritised reads `pending` for every item; M and T read `n/a` for SR and FR.
-  - [ ] Must fix: Measurable and Time-bound on both BRs; Unambiguous on IMT-SR-001 and IMT-FR-003; Complete and Measurable on IMT-NFR-001.
+  - [ ] Must fix: Unambiguous on IMT-SR-001 and IMT-FR-003; Complete and Measurable on IMT-NFR-001.
   - [ ] Flags the IMT-NFR-001 → IMT-BR-001 trace as unsupported (⚠).
   - [ ] Suggested rewrites invent no number or date; they say whom to ask.
   - [ ] Each rewrite is marked wording only or substance.
@@ -23,6 +23,13 @@ Run each case in a fresh session of the named runtime, with only this skill load
 - **Checks:**
   - [ ] Those two items get `Status: verified`, `Reviewer: Alex Rivera`, `Reviewed on: <today>`.
   - [ ] The logging set's version becomes 0.2; `business-requirements.md` is unchanged.
+
+## 7. Business requirements on request
+
+- **Runtime:** Claude Code.
+- **Prompt:** "Check the business requirements."
+- **Checks:**
+  - [ ] Must fix: Measurable and Time-bound on IMT-BR-001 and IMT-BR-002 (thresholds `TBD`, no dates).
   - [ ] Every other item is unchanged.
 
 ## 3. Apply rewrites

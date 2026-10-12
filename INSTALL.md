@@ -32,7 +32,15 @@ Check: open your initiative's folder in the tool and ask "Use ask-ba: where am I
 
 ## Chat runtimes (Open WebUI)
 
-To be written.
+Open WebUI imports a skill as one markdown file, so each skill is also published as a single file with its references and templates included: `dist/open-webui/<skill>.md`.
+
+1. In Open WebUI, open **Workspace → Skills** and choose **Import**.
+2. Select a file from `BA-skills/dist/open-webui/`; its name and description fill in from the file. Repeat for each skill you want.
+3. In a chat, type `$` and pick the skill to load it, then attach the workspace files the skill asks for (`ask-ba` lists them).
+
+Open WebUI cannot write files: each skill prints every file it creates or changes as a block headed `Save as: <path>`. Save each block into your workspace folder.
+
+Only use Open WebUI for an initiative whose `INITIATIVE.md` lists it as a cleared runtime.
 
 ## Updating
 

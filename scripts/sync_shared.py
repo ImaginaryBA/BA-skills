@@ -8,8 +8,10 @@ Each skill lists what it needs in its SKILL.md frontmatter:
         - ids
 which copies shared/workspace.md and shared/ids.md into skills/<skill>/references/.
 
-It also generates skills/ask-ba/references/coverage.md: every BABOK task in
-docs/babok-tasks.md with the skills whose metadata lists it.
+It also generates skills/ask-ba/references/coverage.md (every BABOK task in
+docs/babok-tasks.md with the skills whose metadata lists it), and
+dist/open-webui/<skill>.md: each skill as one file, for chat runtimes that
+import a single markdown file (ADR 0005).
 
 Usage:
     python3 scripts/sync_shared.py          # write the copies and the coverage table
@@ -64,6 +66,24 @@ def coverage() -> str:
     return "\n".join(out).replace("\n\n\n", "\n\n") + "\n"
 
 
+def bundle(skill_dir: Path) -> str:
+    text = (skill_dir / "SKILL.md").read_text(encoding="utf-8")
+    front = re.match(r"^---\n(.*?)\n---\n", text, re.S)
+    fm, body = front.group(1), text[front.end():]
+    desc = re.search(r"^description:\s*>-\n((?:  .*\n?)+)", fm + "\n", re.M)
+    description = " ".join(l.strip() for l in desc.group(1).splitlines()) if desc else ""
+    version = re.search(r"^\s*version:\s*(\S+)", fm, re.M).group(1)
+    out = ["---", f"name: {skill_dir.name}", "description: " + '"' + description.replace('\\', '\\\\').replace('"', '\\"') + '"' , "---", "",
+           f"<!-- Generated from skills/{skill_dir.name}/ (v{version}) by scripts/sync_shared.py. Edit the skill, not this file. -->", "",
+           "Every file this skill refers to, such as `references/<file>.md` or `templates/<file>.md`, is included in full at the end of this document under a heading with that path.", "",
+           body.strip(), ""]
+    for sub in ("references", "templates"):
+        for f in sorted((skill_dir / sub).glob("*.md")) if (skill_dir / sub).exists() else []:
+            content = re.sub(r"^<!-- Generated from .*? -->\n\n", "", f.read_text(encoding="utf-8"))
+            out += ["", "---", "", f"# Included file: {sub}/{f.name}", "", "````markdown", content.strip(), "````"]
+    return "\n".join(out) + "\n"
+
+
 def main() -> int:
     check = "--check" in sys.argv[1:]
     problems = 0
@@ -99,6 +119,20 @@ def main() -> int:
                 cov.parent.mkdir(exist_ok=True)
                 cov.write_text(wanted, encoding="utf-8")
                 print("wrote ask-ba/references/coverage.md")
+    dist = ROOT / "dist" / "open-webui"
+    for skill_md in sorted(SKILLS.glob("*/SKILL.md")):
+        target = dist / f"{skill_md.parent.name}.md"
+        wanted = bundle(skill_md.parent)
+        current = target.read_text(encoding="utf-8") if target.exists() else None
+        if current == wanted:
+            continue
+        if check:
+            print(f"STALE dist/open-webui/{target.name}")
+            problems += 1
+        else:
+            dist.mkdir(parents=True, exist_ok=True)
+            target.write_text(wanted, encoding="utf-8")
+            print(f"wrote dist/open-webui/{target.name}")
     return 1 if problems else 0
 
 

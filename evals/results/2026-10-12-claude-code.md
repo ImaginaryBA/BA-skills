@@ -6,7 +6,7 @@ Each case ran in a fresh copy of `workspace-example/`, executed by an agent that
 |---|---|---|---|---|
 | set-up-initiative | 1, 2, 4, 5, 6, 7 | — | 3 | — |
 | findings-to-requirements | 1, 2, 4, 5 | — | 3*, 6 | *case 3 had no scripted "Confirmed.", so the append was never observed (eval defect, fixed) |
-| check-requirement-quality | 2, 3, 4, 5, 6 | 1 (partly) | — | Case 1: BRs were read for tracing but not checked; the case expected them checked. Case 3 referred to a rewrite by number, which varies per run (eval defect, fixed) |
+| check-requirement-quality | 1, 2, 3, 4, 5, 6 | — | — | Case 1 checked only the named set, reading BRs for tracing; the eval expected BRs checked too. Decided: check only the sets the BA names (skill wording clarified in v0.1.1, eval fixed). Case 3 referred to a rewrite by number, which varies per run (eval defect, fixed) |
 | prepare-for-publication | 1, 2, 4, 5 | — | 3 | Freeze did not add its footer line (fixed) |
 | prepare-elicitation | 1, 2, 4, 5 | — | 3 | Gap warning and stakeholder-row confirmation wording tightened |
 | notes-to-findings | 1, 2, 3 | — | 4 | — |
