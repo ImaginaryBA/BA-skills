@@ -12,6 +12,6 @@ Each case ran in a fresh copy of `workspace-example/`, executed by an agent that
 | notes-to-findings | 1, 2, 3 | — | 4 | — |
 | grill-ba | 1, 2, 3, 4 | — | — | — |
 | requirements-to-stories | 1, 2, 3, 4, 5 | — | — | — |
-| ask-ba | 1 | 3, 4, 5 | 2 | Asked for the workspace before answering questions that do not need it (fixed) |
+| ask-ba | 1; 3, 4, 5 after fix | 3, 4, 5 before fix | 2 | Asked for the workspace before answering questions that do not need it; fixed in v0.1.1 and re-run: all three pass |
 
 Library-wide: when changing a file, some skills replaced the existing footer and others added a line; the rule is now to add a line.
