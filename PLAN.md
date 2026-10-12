@@ -97,7 +97,7 @@ Built while Phase 1 is piloted. Structure decided first:
 | New ID classes; ID scan covers `analysis/`; missing register row reads `000` | shared `ids` (all skills) | done |
 | Create `analysis/` at setup; new register rows | `set-up-initiative` | done (v0.1.1) |
 | BRs may trace to gaps; items may trace to rules and use cases | shared `requirement-set` | done |
-| Publish-ready page and freeze for analyses; Mermaid fallback | `prepare-for-publication` | to do |
+| Publish-ready page and freeze for analyses; Mermaid fallback | `prepare-for-publication` | done (v0.2.0); evals 6–9 not yet run |
 | Routes for the Phase 2 skills | `ask-ba` | to do, with each skill |
 | Draft BRs from gaps; FRs from business rules | `findings-to-requirements` | to do, after `define-future-state` |
 

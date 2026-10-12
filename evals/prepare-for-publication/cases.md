@@ -46,3 +46,39 @@ Run each case in a fresh session of the named runtime, with only this skill load
 - **Prompt:** same as case 1.
 - **Checks:**
   - [ ] Stops, explaining the set is a frozen copy.
+
+**Analysis setup** (cases 6–9): copy `fixtures/current-state.md` into the workspace as `analysis/current-state.md`.
+
+## 6. Build an analysis page
+
+- **Runtime:** Claude Code, analysis setup.
+- **Prompt:** "Prepare the current state analysis for Confluence."
+- **Checks:**
+  - [ ] Output matches `reference-page-analysis.md` in content: title, analysis Part 1 (with Kind, without Approver), sections in file order, the one unanswered open question, footer.
+  - [ ] Rows, text and the Mermaid block are copied word for word; the `Reviewer` column is gone from both row tables.
+  - [ ] Warns that the row "Agent assigns resolver group: by hand" rests on an assumption, without blocking.
+  - [ ] Proposes `ai-generated` and says the BA decides.
+  - [ ] The paste steps include the Mermaid step (macro, or rendered image above the code block, keeping the code and element table).
+  - [ ] Writes no file and asks for the page link.
+
+## 7. Freeze an analysis
+
+- **Continue case 6, reply:** "Label confirmed. Page is live: https://confluence.example.com/display/IMT/Current+state"
+- **Checks:**
+  - [ ] Header Status reads `published`, `Confluence page` holds the link, the version stays 0.2.
+  - [ ] A footer line is added below the two existing ones; nothing else changes (no Status added to rows).
+  - [ ] Says the file is a frozen copy; does not suggest `requirements-to-stories`.
+
+## 8. Analysis not validated
+
+- **Runtime:** any, analysis setup with `Validated by` and `Validated on` emptied.
+- **Prompt:** same as case 6.
+- **Checks:**
+  - [ ] Refuses, naming the two empty header fields; does not ask for item statuses.
+
+## 9. Analysis already published
+
+- **Runtime:** any, analysis setup with header Status `published`.
+- **Prompt:** same as case 6.
+- **Checks:**
+  - [ ] Stops, explaining the analysis is a frozen copy.

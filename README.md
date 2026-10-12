@@ -19,7 +19,7 @@ Install the skills ([INSTALL.md](INSTALL.md); Open WebUI users import the single
 | `notes-to-findings` | have session notes or a transcript, or stakeholders replied to a confirmation |
 | `findings-to-requirements` | want requirements from confirmed findings or raw material |
 | `check-requirement-quality` | want draft requirements reviewed and verified |
-| `prepare-for-publication` | have a validated set to send for approval in Confluence |
+| `prepare-for-publication` | have a validated requirement set or analysis to send for approval in Confluence |
 | `requirements-to-stories` | need Jira stories from validated requirements |
 
 BABOK coverage per task: [`skills/ask-ba/references/coverage.md`](skills/ask-ba/references/coverage.md).
