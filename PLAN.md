@@ -5,7 +5,7 @@ A BABOK-aligned library of portable agent skills for business analysis, in the s
 - Vocabulary: [`CONTEXT.md`](CONTEXT.md). Its terms are used in this plan exactly as defined there.
 - Decisions: [`docs/adr/`](docs/adr). Each one is referenced below as (ADR-nnnn).
 
-Status: **Phase 1 skills drafted (all nine, with evals); next: run the evals in Claude Code and one other runtime, then pilot.**
+Status: **Phase 1 skills drafted (all nine, evals pass in Claude Code); Open WebUI evals and the pilot still to run. Phase 2 structure decided (ADR 0017–0020); next: extend the existing skills, then build `assess-current-state`.**
 
 ---
 
@@ -43,6 +43,7 @@ Non-goals for the first version: direct Confluence or Jira integration, per-runt
   stories/                # one story set per requirement set (same slug)
   decisions/              # initiative decisions
   reviews/                # quality reports
+  analysis/               # one file per analysis (Phase 2, ADR-0017)
 ```
 
 **Inside a requirement set file:** each item has a heading followed by a Field | Value metadata table:
@@ -80,14 +81,57 @@ If the scope has to shrink, cut skill 8 first.
 
 **Definition of a released skill:** its evaluations pass in Claude Code and in at least one other runtime the pilot BAs use, and it carries a version tag.
 
-## 5. Later phases
+## 5. Phase 2: analysis depth
 
-- **Phase 2, analysis depth:** current state, future state, SWOT, Porter's five forces, PESTLE, gap analysis, business case, risk analysis. Also use cases and scenarios, process models (Mermaid), data models, business rules, design options, and facilitation packs for workshops and brainstorming.
+Built while Phase 1 is piloted. Structure decided first:
+
+- Each analysis is one file in `analysis/` with a header, sections, open questions and the footer; status is per file: draft, validated, published, approved. (ADR-0017, format in `shared/analysis.md`)
+- Gaps, risks, design options, business rules and use cases get IDs (`GP`, `RK`, `OP`, `RL`, `UC`); other entries are rows, each with Evidence and an AI use label. (ADR-0018)
+- Analyses are published and frozen like requirement sets; the sponsor approves the business case in Confluence. (ADR-0019)
+- The AI brings the framework, never the facts: every row cites findings or a BA-supplied document, or is an assumption listed as an open question. No web search. (ADR-0020)
+
+### Changes to Phase 1 skills first
+
+| Change | Skill | State |
+|---|---|---|
+| New ID classes; ID scan covers `analysis/`; missing register row reads `000` | shared `ids` (all skills) | done |
+| Create `analysis/` at setup; new register rows | `set-up-initiative` | done (v0.1.1) |
+| BRs may trace to gaps; items may trace to rules and use cases | shared `requirement-set` | done |
+| Publish-ready page and freeze for analyses; Mermaid fallback | `prepare-for-publication` | to do |
+| Routes for the Phase 2 skills | `ask-ba` | to do, with each skill |
+| Draft BRs from gaps; FRs from business rules | `findings-to-requirements` | to do, after `define-future-state` |
+
+### Phase 2 skills, in build order
+
+| # | Skill | Does | Writes | BABOK reference |
+|---|---|---|---|---|
+| 1 | `assess-current-state` | Describes how things work today and why it falls short, with SWOT, PESTLE and five forces as the BA chooses | `current-state.md` | 6.1 Analyze Current State |
+| 2 | `define-future-state` | Describes the target state and the gaps to close | `future-state.md` (GP) | 6.2 Define Future State |
+| 3 | `assess-risks` | Builds the risk register for the initiative or an option | `risks.md` (RK) | 6.3 Assess Risks |
+| 4 | `compare-design-options` | Lays out candidate options against the gaps and business requirements | `design-options.md` (OP) | 7.5 Define Design Options |
+| 5 | `build-business-case` | Weighs the options and recommends one for the sponsor | `business-case.md` | 7.6 Analyze Potential Value and Recommend Solution; 6.4 Define Change Strategy |
+| 6 | `model-process` | Draws a process as Mermaid, current or future, with use cases and scenarios | `process-<slug>.md`, `use-cases-<slug>.md` (UC) | 7.1 Specify and Model Requirements |
+| 7 | `model-data-and-rules` | Draws the data model and lists the business rules | `data-model.md`, `business-rules.md` (RL) | 7.1 Specify and Model Requirements |
+| 8 | `prepare-workshop` | Facilitation pack for a workshop or brainstorming session; may instead extend `prepare-elicitation` | `elicitation/` | 4.1 Prepare for Elicitation |
+
+Skills 6–8 do not depend on 1–5 and can be built in parallel. If the scope has to shrink, cut five forces and PESTLE from skill 1 first, then skill 8.
+
+### Open questions for Phase 2
+
+| # | Question | Ask |
+|---|---|---|
+| 1 | Does the company's Confluence have a Mermaid macro? | Confluence administrator |
+| 2 | Who approves analyses other than the business case: the sponsor, or the stakeholders who validated them? | Head of BA practice |
+| 3 | Should analyses get a `verified` step and a quality check, as requirements do? | Pilot BAs, after the first analyses |
+| 4 | `prepare-workshop` as a new skill, or a workshop mode of `prepare-elicitation`? | Decide when grilling skill 8 |
+
+## 6. Later phases
+
 - **Phase 3, before-publication lifecycle and reuse:** trace queries, prioritisation (MoSCoW, WSJF, Kano), impact analysis on *unpublished* sets, and a reuse catalogue built from **frozen copies** on the drive. It is not built from Confluence, because of the data policy.
 - **Phase 4, rollout:** planning skills (BA approach, stakeholder analysis, governance), solution evaluation skills, `INSTALL.md` for each runtime.
 - **Future options (deferred):** generated adapters for each runtime (ADR-0005) and direct publication through a connector (ADR-0002).
 
-## 6. How each skill gets built
+## 7. How each skill gets built
 
 1. Grill it: triggers, inputs, outputs, what "good" looks like.
 2. Write `SKILL.md`: frontmatter with name, situation-first description and BABOK reference. Then steps, the output template with AI use fields, completion criteria and handoffs. Keep it under about 150 lines.
@@ -95,7 +139,7 @@ If the scope has to shrink, cut skill 8 first.
 4. Run it in Claude Code and in one other pilot runtime, on real pilot work.
 5. Tighten it, tag a version and release it.
 
-## 7. Phase 0: before building
+## 8. Phase 0: before building
 
 - [ ] Choose the pilot initiative: one that is in early elicitation now, with at least one pilot BA on a runtime other than Claude.
 - [ ] Take baselines for the interview guide, the elicitation summary, the story set, and peer-review defects.

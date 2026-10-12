@@ -26,7 +26,7 @@ BABOK coverage per task: [`skills/ask-ba/references/coverage.md`](skills/ask-ba/
 
 ## How it works
 
-- Each initiative lives in a **workspace**: a folder of markdown files (`INITIATIVE.md`, `stakeholders.md`, `elicitation/`, `requirements/`, `stories/`, `reviews/`, `decisions/`). See [`workspace-example/`](workspace-example/) for a complete fictional initiative.
+- Each initiative lives in a **workspace**: a folder of markdown files (`INITIATIVE.md`, `stakeholders.md`, `elicitation/`, `requirements/`, `stories/`, `reviews/`, `decisions/`, `analysis/`). See [`workspace-example/`](workspace-example/) for a complete fictional initiative.
 - Every item a skill drafts is labelled **AI-generated** or **AI-assisted**, and every interview or questionnaire tells stakeholders that AI is used.
 - Requirements become the system of record in Confluence once published; after that, no skill touches them.
 

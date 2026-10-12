@@ -7,7 +7,7 @@ description: >-
   folders. Use when a BA begins a new piece of analysis work, or when
   another skill finds no INITIATIVE.md.
 metadata:
-  version: 0.1.0
+  version: 0.1.1
   babok:
     knowledge_area: 3 Business Analysis Planning and Monitoring
     tasks:
@@ -33,6 +33,7 @@ metadata:
     - stories/
     - decisions/
     - reviews/
+    - analysis/
   shared:
     - workspace
     - ids
@@ -75,7 +76,7 @@ Done when no placeholder in angle brackets remains: every field is filled from t
 
 ## 3. Deliver
 
-Deliver the two files and the empty folders `elicitation/`, `requirements/`, `stories/`, `decisions/`, `reviews/` as `references/workspace.md` describes for this runtime. In a chat runtime, list the empty folders in the tree for the BA to create.
+Deliver the two files and the empty folders `elicitation/`, `requirements/`, `stories/`, `decisions/`, `reviews/`, `analysis/` as `references/workspace.md` describes for this runtime. In a chat runtime, list the empty folders in the tree for the BA to create.
 
 Then list every `TBD` field and suggest the next step: prepare elicitation with `prepare-elicitation`, or, when the business need is still vague, sharpen it first with `grill-ba`.
 

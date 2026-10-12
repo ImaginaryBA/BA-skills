@@ -37,6 +37,11 @@
 | TR | Transition requirement | 000 |
 | ST | Delivery story | 000 |
 | FN | Elicitation finding | 000 |
+| GP | Gap | 000 |
+| RK | Risk | 000 |
+| OP | Design option | 000 |
+| RL | Business rule | 000 |
+| UC | Use case | 000 |
 
 ---
 Produced with set-up-initiative v<version> in <runtime>, <YYYY-MM-DD>.

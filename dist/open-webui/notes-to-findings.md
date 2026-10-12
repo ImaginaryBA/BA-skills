@@ -170,7 +170,7 @@ Only confirmed findings become requirements. Unconfirmed findings become open qu
 `<CODE>-<CLASS>-<NNN>`, e.g. `IMT-FR-012`.
 
 - `CODE`: the initiative code, 2–5 uppercase letters.
-- `CLASS`: `BR` business, `SR` stakeholder, `FR` functional, `NFR` non-functional, `TR` transition requirement; `ST` delivery story (temporary until its Jira key is recorded); `FN` elicitation finding.
+- `CLASS`: `BR` business, `SR` stakeholder, `FR` functional, `NFR` non-functional, `TR` transition requirement; `ST` delivery story (temporary until its Jira key is recorded); `FN` elicitation finding; `GP` gap, `RK` risk, `OP` design option, `RL` business rule, `UC` use case (analysis items).
 - `NNN`: sequence within the initiative and class, zero-padded to 3 digits, starting at 001.
 
 IDs are never renumbered or reused. A retired or superseded item keeps its ID. An item copied from another initiative gets a new ID plus a `Reused from` value naming the original.
@@ -180,8 +180,9 @@ IDs are never renumbered or reused. A retired or superseded item keeps its ID. A
 The ID register is a table in `INITIATIVE.md` holding the last number used per class. It is the source of every new ID.
 
 1. Read the register. Next ID = last used + 1.
-2. In an agentic runtime, also scan `elicitation/`, `requirements/` and `stories/` for the highest number per class. If the scan finds a higher number than the register, stop and show the BA both numbers; continue only once the BA says which is right.
-3. After creating IDs, output the updated register (in a chat runtime, as an updated `INITIATIVE.md` block).
+2. In an agentic runtime, also scan `elicitation/`, `requirements/`, `stories/` and `analysis/` for the highest number per class. If the scan finds a higher number than the register, stop and show the BA both numbers; continue only once the BA says which is right.
+3. If the register has no row for a class, its last used number is `000`; add the row when you first use the class.
+4. After creating IDs, output the updated register (in a chat runtime, as an updated `INITIATIVE.md` block).
 ````
 
 ---
@@ -249,7 +250,7 @@ One requirement per statement. Use the initiative glossary's terms.
 - **Threshold**: the measurable condition that proves the item is met (e.g. "95% of searches return in ≤ 2 s"). Mandatory for BR and NFR: only numbers the sources give, otherwise `TBD` plus an open question. Optional for SR, FR and TR: `—` when none applies.
 - **Priority**: always `TBD` at creation; prioritisation is a stakeholder decision.
 - **Source**: finding IDs. A BR drafted from the initiative's business need may cite `Business need`.
-- **Traces to**: SR, FR, NFR and TR trace to at least one BR; an FR may also trace to the SR it satisfies. A BR traces to `Business need`.
+- **Traces to**: SR, FR, NFR and TR trace to at least one BR; an FR may also trace to the SR it satisfies. A BR traces to `Business need`, and may also trace to the gaps (`GP`) it closes. Any item may also trace to the business rules (`RL`) or use cases (`UC`) it serves.
 - **Status** values, in order: `draft`, `verified`, `validated`, `published`, `approved`, then `retired` or `superseded`. Only the BA sets `validated`, by hand, after filling `Validated by` and `Validated on` in the set header.
 
 ## Open questions
@@ -289,6 +290,7 @@ A workspace is one folder per initiative on the synced company drive. Skills rea
   elicitation/       # one file per elicitation session
   requirements/      # one file per requirement set
   stories/           # one file per story set
+  analysis/          # one file per analysis: current state, gaps, risks, options, business case, models
   decisions/         # initiative decisions
   reviews/           # quality reports, one per check run
 ```

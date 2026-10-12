@@ -3,7 +3,7 @@ name: set-up-initiative
 description: "Start the workspace for a new initiative — creates INITIATIVE.md (business need, scope, glossary, data classification, cleared runtimes, initiative code, ID register), the stakeholder register and the empty folders. Use when a BA begins a new piece of analysis work, or when another skill finds no INITIATIVE.md."
 ---
 
-<!-- Generated from skills/set-up-initiative/ (v0.1.0) by scripts/sync_shared.py. Edit the skill, not this file. -->
+<!-- Generated from skills/set-up-initiative/ (v0.1.1) by scripts/sync_shared.py. Edit the skill, not this file. -->
 
 Every file this skill refers to, such as `references/<file>.md` or `templates/<file>.md`, is included in full at the end of this document under a heading with that path.
 
@@ -42,7 +42,7 @@ Done when no placeholder in angle brackets remains: every field is filled from t
 
 ## 3. Deliver
 
-Deliver the two files and the empty folders `elicitation/`, `requirements/`, `stories/`, `decisions/`, `reviews/` as `references/workspace.md` describes for this runtime. In a chat runtime, list the empty folders in the tree for the BA to create.
+Deliver the two files and the empty folders `elicitation/`, `requirements/`, `stories/`, `decisions/`, `reviews/`, `analysis/` as `references/workspace.md` describes for this runtime. In a chat runtime, list the empty folders in the tree for the BA to create.
 
 Then list every `TBD` field and suggest the next step: prepare elicitation with `prepare-elicitation`, or, when the business need is still vague, sharpen it first with `grill-ba`.
 
@@ -124,7 +124,7 @@ Before reading any workspace content, confirm the current runtime appears in the
 `<CODE>-<CLASS>-<NNN>`, e.g. `IMT-FR-012`.
 
 - `CODE`: the initiative code, 2–5 uppercase letters.
-- `CLASS`: `BR` business, `SR` stakeholder, `FR` functional, `NFR` non-functional, `TR` transition requirement; `ST` delivery story (temporary until its Jira key is recorded); `FN` elicitation finding.
+- `CLASS`: `BR` business, `SR` stakeholder, `FR` functional, `NFR` non-functional, `TR` transition requirement; `ST` delivery story (temporary until its Jira key is recorded); `FN` elicitation finding; `GP` gap, `RK` risk, `OP` design option, `RL` business rule, `UC` use case (analysis items).
 - `NNN`: sequence within the initiative and class, zero-padded to 3 digits, starting at 001.
 
 IDs are never renumbered or reused. A retired or superseded item keeps its ID. An item copied from another initiative gets a new ID plus a `Reused from` value naming the original.
@@ -134,8 +134,9 @@ IDs are never renumbered or reused. A retired or superseded item keeps its ID. A
 The ID register is a table in `INITIATIVE.md` holding the last number used per class. It is the source of every new ID.
 
 1. Read the register. Next ID = last used + 1.
-2. In an agentic runtime, also scan `elicitation/`, `requirements/` and `stories/` for the highest number per class. If the scan finds a higher number than the register, stop and show the BA both numbers; continue only once the BA says which is right.
-3. After creating IDs, output the updated register (in a chat runtime, as an updated `INITIATIVE.md` block).
+2. In an agentic runtime, also scan `elicitation/`, `requirements/`, `stories/` and `analysis/` for the highest number per class. If the scan finds a higher number than the register, stop and show the BA both numbers; continue only once the BA says which is right.
+3. If the register has no row for a class, its last used number is `000`; add the row when you first use the class.
+4. After creating IDs, output the updated register (in a chat runtime, as an updated `INITIATIVE.md` block).
 ````
 
 ---
@@ -156,6 +157,7 @@ A workspace is one folder per initiative on the synced company drive. Skills rea
   elicitation/       # one file per elicitation session
   requirements/      # one file per requirement set
   stories/           # one file per story set
+  analysis/          # one file per analysis: current state, gaps, risks, options, business case, models
   decisions/         # initiative decisions
   reviews/           # quality reports, one per check run
 ```
@@ -220,6 +222,11 @@ Before working, a skill needs `INITIATIVE.md`. In an agentic runtime, read it fr
 | TR | Transition requirement | 000 |
 | ST | Delivery story | 000 |
 | FN | Elicitation finding | 000 |
+| GP | Gap | 000 |
+| RK | Risk | 000 |
+| OP | Design option | 000 |
+| RL | Business rule | 000 |
+| UC | Use case | 000 |
 
 ---
 Produced with set-up-initiative v<version> in <runtime>, <YYYY-MM-DD>.

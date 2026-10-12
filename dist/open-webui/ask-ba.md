@@ -183,6 +183,7 @@ A workspace is one folder per initiative on the synced company drive. Skills rea
   elicitation/       # one file per elicitation session
   requirements/      # one file per requirement set
   stories/           # one file per story set
+  analysis/          # one file per analysis: current state, gaps, risks, options, business case, models
   decisions/         # initiative decisions
   reviews/           # quality reports, one per check run
 ```
