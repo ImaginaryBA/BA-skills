@@ -3,7 +3,7 @@ name: prepare-for-publication
 description: "Turn a validated requirement set or analysis into a page ready to paste into Confluence Data Center — page properties, trimmed items and rows, diagrams, open questions and a proposed AI use label — then, once the BA confirms the page is live, freeze the workspace file as published. Use when a BA is ready to send a requirement set, a business case or another analysis for approval in Confluence."
 ---
 
-<!-- Generated from skills/prepare-for-publication/ (v0.2.0) by scripts/sync_shared.py. Edit the skill, not this file. -->
+<!-- Generated from skills/prepare-for-publication/ (v0.2.1) by scripts/sync_shared.py. Edit the skill, not this file. -->
 
 Every file this skill refers to, such as `references/<file>.md` or `templates/<file>.md`, is included in full at the end of this document under a heading with that path.
 
@@ -28,7 +28,7 @@ An **analysis** is ready when all of these hold:
 
 A `published` file is already frozen: stop and say so. If any other condition fails, list every blocker (by item ID for a set) and stop.
 
-Warnings, which do not block: a set item tracing to a BR that is not yet validated; an analysis row or item whose Evidence reads `Assumption`; an analysis citing IDs from another analysis that is not yet validated. List each warning by ID or row.
+Warnings, which do not block: a set item tracing to a BR that is not yet validated; an analysis row or item whose Evidence reads `Assumption` or cites anything `(unconfirmed)`; an analysis citing IDs from another analysis that is not yet validated. List each warning by ID or row.
 
 Done when the file passes its conditions and every warning is listed.
 
@@ -138,8 +138,15 @@ An analysis is one file in `analysis/` (ADR 0017), published later as one Conflu
    | Confluence page | TBD |
 
 2. The sections the skill's template defines for its kind.
-3. `## Open questions`, always present (write `None.` if empty), in the requirement set's format, with `Findings involved` holding finding IDs or `Assumption`.
-4. The footer (`references/ai-use.md`).
+3. `## Sources`, when any supplied document is cited (see below).
+4. `## Open questions`, always present (write `None.` if empty):
+
+   | # | Question | Findings involved | Ask | Answered by |
+   |---|---|---|---|---|
+   | 1 | <gap, conflict or assumption> | <evidence involved, or `Assumption`> | <stakeholder role> | — |
+
+   Never resolve a conflict or remove a question; `Answered by` stays `—` until a later skill fills it with the finding that answers it.
+5. The footer (`references/ai-use.md`).
 
 ## Rows without IDs
 
@@ -154,7 +161,7 @@ Gaps, risks, design options, business rules and use cases are items: a `### <ID>
 
 | Field | Value |
 |---|---|
-| Evidence | <finding IDs, or document title and date, or `Assumption`> |
+| Evidence | <finding IDs, document title and date, `Business need (unconfirmed)`, or `Assumption`> |
 | Traces to | <IDs or `Business need`> |
 | AI use | AI-generated / AI-assisted |
 | Reviewer | |
@@ -162,11 +169,25 @@ Gaps, risks, design options, business rules and use cases are items: a `### <ID>
 
 ## Evidence (ADR 0020)
 
-- Every row and item cites evidence: finding IDs, or a document the BA supplied, named by title and date.
+- Every row and item cites evidence, one or more of:
+  - finding IDs; a finding with `Confirmed: no` is cited as `<ID> (unconfirmed)`;
+  - a supplied document, by title and date (e.g. `Service desk monthly report, September 2026`);
+  - `Business need (unconfirmed)`, for a statement taken from the business need in `INITIATIVE.md`.
 - A statement without evidence is written with Evidence `Assumption` and added to open questions with the role to ask.
+- When two pieces of evidence disagree, write each as its own row or item with its own evidence, and add an open question naming the conflict. Never pick one.
 - Never supply market, competitor, regulatory or financial facts from your own knowledge, and never search the web. You may suggest framework headings worth exploring and questions to ask.
 - Numbers only as the sources give them. A calculation from given figures shows its inputs and steps.
 - Likelihood, impact and priority are `TBD` until stakeholders give them.
+
+## Supplied documents
+
+- Read only what the BA supplies. Replace personal names with roles, as for elicitation notes (`references/data-classification.md`).
+- If a document holds customer or production data, do not use it: tell the BA which document and what kind of data (never the data itself), ask for a cleaned version, and carry on with the rest.
+- Never read a Confluence page outside a local-model runtime. Capability maps belong to the business architecture team (ADR 0021): never read, draft or extend one; cite it by title and date for the capabilities the BA names.
+- Every analysis citing a document has a `## Sources` section before `## Open questions`:
+
+  | Document | Date | Owner role |
+  |---|---|---|
 
 ## Diagrams
 

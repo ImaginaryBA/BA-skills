@@ -6,6 +6,7 @@ Authored here, not generated from `shared/`. Match the BA's situation to one row
 |---|---|---|
 | Starting new work; no `INITIATIVE.md` exists | `set-up-initiative` | none |
 | The need is vague, or open questions keep piling up | `grill-ba` | `INITIATIVE.md`, `stakeholders.md`, elicitation files |
+| Needs a picture of how things work today and why it falls short (current state, SWOT, PESTLE, baselines) | `assess-current-state` | `INITIATIVE.md`, `stakeholders.md`, elicitation files, supplied documents, any current-state file |
 | About to interview or survey stakeholders | `prepare-elicitation` | `INITIATIVE.md`, `stakeholders.md`, draft requirement sets, elicitation files |
 | Has notes or a transcript from a session; or stakeholders replied to a confirmation request | `notes-to-findings` | `INITIATIVE.md`, `stakeholders.md`, the session's elicitation file, draft requirement sets |
 | Has confirmed findings, or raw notes, emails or documents, and wants requirements | `findings-to-requirements` | `INITIATIVE.md`, `stakeholders.md`, elicitation files, draft requirement sets |

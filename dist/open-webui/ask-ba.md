@@ -3,7 +3,7 @@ name: ask-ba
 description: "Start here. Tell the BA where their initiative stands and which BA-skills skill fits their situation next, with the files to bring; or say plainly when no skill covers it. Also answers what BA-skills covers against BABOK. Use when a BA is unsure which skill to use, wants a status of their workspace, or asks about coverage."
 ---
 
-<!-- Generated from skills/ask-ba/ (v0.1.2) by scripts/sync_shared.py. Edit the skill, not this file. -->
+<!-- Generated from skills/ask-ba/ (v0.1.3) by scripts/sync_shared.py. Edit the skill, not this file. -->
 
 Every file this skill refers to, such as `references/<file>.md` or `templates/<file>.md`, is included in full at the end of this document under a heading with that path.
 
@@ -88,7 +88,7 @@ Which BA-skills skill supports each BABOK v3 task. Tasks marked "not yet" have n
 
 | Task | Skills |
 |---|---|
-| 6.1 Analyze Current State | not yet |
+| 6.1 Analyze Current State | `assess-current-state` |
 | 6.2 Define Future State | not yet |
 | 6.3 Assess Risks | not yet |
 | 6.4 Define Change Strategy | not yet |
@@ -150,6 +150,7 @@ Authored here, not generated from `shared/`. Match the BA's situation to one row
 |---|---|---|
 | Starting new work; no `INITIATIVE.md` exists | `set-up-initiative` | none |
 | The need is vague, or open questions keep piling up | `grill-ba` | `INITIATIVE.md`, `stakeholders.md`, elicitation files |
+| Needs a picture of how things work today and why it falls short (current state, SWOT, PESTLE, baselines) | `assess-current-state` | `INITIATIVE.md`, `stakeholders.md`, elicitation files, supplied documents, any current-state file |
 | About to interview or survey stakeholders | `prepare-elicitation` | `INITIATIVE.md`, `stakeholders.md`, draft requirement sets, elicitation files |
 | Has notes or a transcript from a session; or stakeholders replied to a confirmation request | `notes-to-findings` | `INITIATIVE.md`, `stakeholders.md`, the session's elicitation file, draft requirement sets |
 | Has confirmed findings, or raw notes, emails or documents, and wants requirements | `findings-to-requirements` | `INITIATIVE.md`, `stakeholders.md`, elicitation files, draft requirement sets |

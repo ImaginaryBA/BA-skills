@@ -54,7 +54,7 @@ Run each case in a fresh session of the named runtime, with only this skill load
 - **Runtime:** Claude Code, analysis setup.
 - **Prompt:** "Prepare the current state analysis for Confluence."
 - **Checks:**
-  - [ ] Output matches `reference-page-analysis.md` in content: title, analysis Part 1 (with Kind, without Approver), sections in file order, the one unanswered open question, footer.
+  - [ ] Output matches `reference-page-analysis.md` in content: title, analysis Part 1 (with Kind, without Approver), sections in file order (including Sources), the one unanswered open question, footer.
   - [ ] Rows, text and the Mermaid block are copied word for word; the `Reviewer` column is gone from both row tables.
   - [ ] Warns that the row "Agent assigns resolver group: by hand" rests on an assumption, without blocking.
   - [ ] Proposes `ai-generated` and says the BA decides.

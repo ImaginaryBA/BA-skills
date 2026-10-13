@@ -39,6 +39,12 @@ flowchart LR
 | Weakness | Incidents with the same impact get different priorities. | IMT-FN-003 | AI-generated | Alex Rivera |
 | Threat | The legacy tool is out of vendor support. | Legacy ticketing tool end-of-support notice, 2026-03-31 | AI-assisted | Alex Rivera |
 
+## Sources
+
+| Document | Date | Owner role |
+|---|---|---|
+| Legacy ticketing tool end-of-support notice | 2026-03-31 | Head of IT Operations |
+
 ## Open questions
 
 | # | Question | Findings involved | Ask | Answered by |

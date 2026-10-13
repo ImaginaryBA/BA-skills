@@ -38,7 +38,7 @@ Which BA-skills skill supports each BABOK v3 task. Tasks marked "not yet" have n
 
 | Task | Skills |
 |---|---|
-| 6.1 Analyze Current State | not yet |
+| 6.1 Analyze Current State | `assess-current-state` |
 | 6.2 Define Future State | not yet |
 | 6.3 Assess Risks | not yet |
 | 6.4 Define Change Strategy | not yet |

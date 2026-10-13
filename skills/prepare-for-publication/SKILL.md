@@ -8,7 +8,7 @@ description: >-
   Use when a BA is ready to send a requirement set, a business case or
   another analysis for approval in Confluence.
 metadata:
-  version: 0.2.0
+  version: 0.2.1
   babok:
     knowledge_area: "5 Requirements Life Cycle Management"
     tasks:
@@ -50,7 +50,7 @@ An **analysis** is ready when all of these hold:
 
 A `published` file is already frozen: stop and say so. If any other condition fails, list every blocker (by item ID for a set) and stop.
 
-Warnings, which do not block: a set item tracing to a BR that is not yet validated; an analysis row or item whose Evidence reads `Assumption`; an analysis citing IDs from another analysis that is not yet validated. List each warning by ID or row.
+Warnings, which do not block: a set item tracing to a BR that is not yet validated; an analysis row or item whose Evidence reads `Assumption` or cites anything `(unconfirmed)`; an analysis citing IDs from another analysis that is not yet validated. List each warning by ID or row.
 
 Done when the file passes its conditions and every warning is listed.
 

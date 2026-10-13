@@ -15,6 +15,7 @@ Install the skills ([INSTALL.md](INSTALL.md); Open WebUI users import the single
 | `ask-ba` | are unsure which skill fits, or want a status of your initiative |
 | `set-up-initiative` | start a new piece of analysis work |
 | `grill-ba` | have a vague need to sharpen before elicitation |
+| `assess-current-state` | need a picture of how things work today and why it falls short |
 | `prepare-elicitation` | are about to interview or survey stakeholders |
 | `notes-to-findings` | have session notes or a transcript, or stakeholders replied to a confirmation |
 | `findings-to-requirements` | want requirements from confirmed findings or raw material |
