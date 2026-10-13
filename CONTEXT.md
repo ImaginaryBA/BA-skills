@@ -93,7 +93,7 @@ _Avoid_: Assessment, study, deliverable
 Which of the fixed types an analysis is; decides its file name and its sections.
 
 **Evidence**:
-What an analysis row or item rests on: finding IDs, or a supplied document named by title and date. Every row and item has it. A finding not yet confirmed counts, marked `(unconfirmed)`.
+What an analysis row or item rests on: finding IDs, a supplied document named by title and date, or the initiative's business need. Every row and item has it. A finding not yet confirmed, and the business need, count but are marked `(unconfirmed)`.
 _Avoid_: Source (that is a requirement's field and holds findings only)
 
 **Supplied document**:
