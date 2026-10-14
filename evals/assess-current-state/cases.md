@@ -17,9 +17,10 @@ Run each case in a fresh session of the named runtime, with only this skill load
   - [ ] Every row has Evidence and AI use `AI-generated`; `Reviewer` is empty everywhere.
   - [ ] Unconfirmed findings (e.g. IMT-FN-009, IMT-FN-011) are cited with `(unconfirmed)`; statements taken from the business need cite `Business need (unconfirmed)`.
   - [ ] No cause, figure or external fact appears that the findings or business need do not state; causes not given read `TBD` with an open question.
-  - [ ] Baseline measures hold "about 5 minutes per alert" from IMT-FN-002 and nothing invented; missing figures read `TBD` with open questions.
+  - [ ] Baseline measures hold "about 5 minutes per alert" from IMT-FN-002 and nothing invented; missing figures read `TBD`, cite the evidence that makes them matter (not `Assumption`), and have open questions.
+  - [ ] Findings about what the solution should do (IMT-FN-005, 006, 010, 013) are not rows; they are listed at delivery for `define-future-state`.
   - [ ] A "today" Mermaid flow of at most about eight steps, followed by its element table; any step without evidence is an `Assumption` with an open question.
-  - [ ] SWOT opportunities read `No evidence yet.` with suggested questions in open questions; no market or vendor claims.
+  - [ ] SWOT opportunities are one row reading `No evidence yet.` with Evidence `—`, with suggested questions in open questions; no market or vendor claims.
   - [ ] No PESTLE or five-forces section; no `## Sources` section (no documents).
   - [ ] Ends with `## Open questions` (each with a register role) and the footer.
   - [ ] Delivery lists open questions by whom to ask and the count of rows on unconfirmed evidence or assumptions; suggests `prepare-elicitation`, then `define-future-state`.

@@ -90,4 +90,4 @@ flowchart LR
 | 6 | Which external developments could the initiative use, such as monitoring platform or vendor features? Supply any vendor or market documents. | Assumption | Monitoring Engineer | — |
 
 ---
-Produced with assess-current-state v0.1.0 in Claude Code, 2026-10-13.
+Produced with assess-current-state v0.1.1 in Claude Code, 2026-10-24.

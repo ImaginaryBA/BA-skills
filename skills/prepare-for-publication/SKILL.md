@@ -8,7 +8,7 @@ description: >-
   Use when a BA is ready to send a requirement set, a business case or
   another analysis for approval in Confluence.
 metadata:
-  version: 0.2.1
+  version: 0.2.2
   babok:
     knowledge_area: "5 Requirements Life Cycle Management"
     tasks:
@@ -45,7 +45,7 @@ A **requirement set** is ready when all of these hold:
 - `Validated by` and `Validated on` in the set header are filled.
 
 An **analysis** is ready when all of these hold:
-- its status is `draft`;
+- its status is `validated` (the BA sets it by hand; an analysis has no per-item status);
 - `Validated by` and `Validated on` in the header are filled.
 
 A `published` file is already frozen: stop and say so. If any other condition fails, list every blocker (by item ID for a set) and stop.

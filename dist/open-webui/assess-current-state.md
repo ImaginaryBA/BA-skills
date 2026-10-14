@@ -3,7 +3,7 @@ name: assess-current-state
 description: "Describe how things work today and why it falls short — needs and problems with their causes, processes, people, technology, policies and baseline measures, plus SWOT, PESTLE or five forces where the evidence supports them — every statement citing findings or supplied documents, and every gap an open question. Use when a BA needs a current-state picture of an initiative, at any stage of elicitation."
 ---
 
-<!-- Generated from skills/assess-current-state/ (v0.1.0) by scripts/sync_shared.py. Edit the skill, not this file. -->
+<!-- Generated from skills/assess-current-state/ (v0.1.1) by scripts/sync_shared.py. Edit the skill, not this file. -->
 
 Every file this skill refers to, such as `references/<file>.md` or `templates/<file>.md`, is included in full at the end of this document under a heading with that path.
 
@@ -45,10 +45,10 @@ Fill `templates/current-state.md`. For every row:
 - names become roles.
 
 Section rules:
-- **Needs and problems**: Cause only as the evidence states it, otherwise `TBD` plus an open question.
+- **Needs and problems**: what goes wrong today and the business need behind it. Cause only as the evidence states it, otherwise `TBD` plus an open question. Findings that say what the solution should do (e.g. "incidents should be assigned automatically", "warn 30 minutes before a breach") describe the future, not today: leave them out of this file and list them at delivery for `define-future-state`. A conflict between such findings is not a current-state question either.
 - **Processes**: at most one "today" Mermaid flow of up to about eight steps, followed by its element table; suggest `model-process` for anything more detailed. Capabilities appear only as the BA named them, with the capability map as evidence; a capability the BA needs but the map lacks is an open question for the business architecture team, never a new capability; if the team has no row in `stakeholders.md`, follow the workspace rule for adding a stakeholder.
-- **Baseline measures**: values only as the evidence gives them. Two sources that disagree get a row each and an open question asking which the business case should use. A measure the BA needs without a figure reads `TBD` plus an open question.
-- **SWOT**: strengths and weaknesses restate core rows with the same evidence. Opportunities and threats, and every PESTLE and five-forces entry, need evidence about external factors; without it the section reads `No evidence yet.` and its suggested questions go into open questions.
+- **Baseline measures**: values only as the evidence gives them. Two sources that disagree get a row each and an open question asking which the business case should use. A measure without a figure reads Value `TBD`, cites the evidence that makes it matter (not `Assumption`), and gets an open question. Unknown periods read `TBD`.
+- **SWOT**: strengths and weaknesses restate core rows with the same evidence. Opportunities and threats, and every PESTLE and five-forces entry, need evidence about external factors; without it the section reads `No evidence yet.` and its suggested questions go into open questions. In the SWOT table, an empty quadrant is one row with Entry `No evidence yet.` and Evidence `—`.
 - A core section with nothing to say reads `No evidence yet.` plus an open question with the role to ask.
 - A statement the BA wants in but nothing supports is written with Evidence `Assumption` plus an open question.
 
@@ -60,12 +60,13 @@ Done when every section is filled or reads `No evidence yet.`, every row has evi
 
 Deliver the file as `references/workspace.md` describes. Then list:
 - documents set aside, and why;
+- findings left for `define-future-state` because they describe the future;
 - the open questions, grouped by whom to ask;
 - how many rows rest on unconfirmed evidence or assumptions.
 
 Next steps: put the open questions to stakeholders with `prepare-elicitation`; if the need itself is still vague, `grill-ba` first; once the picture holds, `define-future-state`. Before publication, the BA marks the file validated by hand.
 
-Done when the BA has the file and the three lists.
+Done when the BA has the file and the four lists.
 
 
 ---
@@ -204,7 +205,7 @@ Diagrams are Mermaid code blocks. Each diagram is followed by a table of its ele
 
 ## Status and changes
 
-- Status applies to the whole file: `draft`, `validated`, `published`, `approved`. Only the BA sets `validated`, by hand, after filling `Validated by` and `Validated on`.
+- Status applies to the whole file: `draft`, `validated`, `published`, `approved`. Only the BA sets `validated`, by hand, after filling `Validated by` and `Validated on`; `prepare-for-publication` takes only a `validated` analysis.
 - A **draft** analysis may gain new rows, items and open questions appended at the end of their sections. Each change raises the version by 0.1. No skill rewrites or removes an existing row or item.
 - `prepare-for-publication` sets Status `published` and fills `Confluence page` once the BA confirms the page is live. From then on the file is a frozen copy, never changed.
 ````

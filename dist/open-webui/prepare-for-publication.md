@@ -3,7 +3,7 @@ name: prepare-for-publication
 description: "Turn a validated requirement set or analysis into a page ready to paste into Confluence Data Center — page properties, trimmed items and rows, diagrams, open questions and a proposed AI use label — then, once the BA confirms the page is live, freeze the workspace file as published. Use when a BA is ready to send a requirement set, a business case or another analysis for approval in Confluence."
 ---
 
-<!-- Generated from skills/prepare-for-publication/ (v0.2.1) by scripts/sync_shared.py. Edit the skill, not this file. -->
+<!-- Generated from skills/prepare-for-publication/ (v0.2.2) by scripts/sync_shared.py. Edit the skill, not this file. -->
 
 Every file this skill refers to, such as `references/<file>.md` or `templates/<file>.md`, is included in full at the end of this document under a heading with that path.
 
@@ -23,7 +23,7 @@ A **requirement set** is ready when all of these hold:
 - `Validated by` and `Validated on` in the set header are filled.
 
 An **analysis** is ready when all of these hold:
-- its status is `draft`;
+- its status is `validated` (the BA sets it by hand; an analysis has no per-item status);
 - `Validated by` and `Validated on` in the header are filled.
 
 A `published` file is already frozen: stop and say so. If any other condition fails, list every blocker (by item ID for a set) and stop.
@@ -195,7 +195,7 @@ Diagrams are Mermaid code blocks. Each diagram is followed by a table of its ele
 
 ## Status and changes
 
-- Status applies to the whole file: `draft`, `validated`, `published`, `approved`. Only the BA sets `validated`, by hand, after filling `Validated by` and `Validated on`.
+- Status applies to the whole file: `draft`, `validated`, `published`, `approved`. Only the BA sets `validated`, by hand, after filling `Validated by` and `Validated on`; `prepare-for-publication` takes only a `validated` analysis.
 - A **draft** analysis may gain new rows, items and open questions appended at the end of their sections. Each change raises the version by 0.1. No skill rewrites or removes an existing row or item.
 - `prepare-for-publication` sets Status `published` and fills `Confluence page` once the BA confirms the page is live. From then on the file is a frozen copy, never changed.
 ````

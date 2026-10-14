@@ -47,7 +47,7 @@ Run each case in a fresh session of the named runtime, with only this skill load
 - **Checks:**
   - [ ] Stops, explaining the set is a frozen copy.
 
-**Analysis setup** (cases 6–9): copy `fixtures/current-state.md` into the workspace as `analysis/current-state.md`.
+**Analysis setup** (cases 6–9): copy `fixtures/current-state.md` (Status `validated`) into the workspace as `analysis/current-state.md`.
 
 ## 6. Build an analysis page
 
@@ -71,10 +71,11 @@ Run each case in a fresh session of the named runtime, with only this skill load
 
 ## 8. Analysis not validated
 
-- **Runtime:** any, analysis setup with `Validated by` and `Validated on` emptied.
+- **Runtime:** any, analysis setup with Status `draft` and `Validated by` and `Validated on` emptied.
 - **Prompt:** same as case 6.
 - **Checks:**
-  - [ ] Refuses, naming the two empty header fields; does not ask for item statuses.
+  - [ ] Refuses, naming the `draft` status and the two empty header fields; does not ask for item statuses.
+  - [ ] Tells the BA to set Status `validated` by hand once stakeholders have confirmed.
 
 ## 9. Analysis already published
 

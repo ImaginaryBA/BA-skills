@@ -6,7 +6,7 @@
 | Kind | Current state |
 | Initiative code | IMT |
 | Version | 0.2 |
-| Status | draft |
+| Status | validated |
 | Business analyst | Alex Rivera |
 | Validated by | Head of IT Operations, Service Desk Lead |
 | Validated on | 2026-10-21 |
