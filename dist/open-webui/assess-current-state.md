@@ -3,7 +3,7 @@ name: assess-current-state
 description: "Describe how things work today and why it falls short — needs and problems with their causes, processes, people, technology, policies and baseline measures, plus SWOT, PESTLE or five forces where the evidence supports them — every statement citing findings or supplied documents, and every gap an open question. Use when a BA needs a current-state picture of an initiative, at any stage of elicitation."
 ---
 
-<!-- Generated from skills/assess-current-state/ (v0.1.1) by scripts/sync_shared.py. Edit the skill, not this file. -->
+<!-- Generated from skills/assess-current-state/ (v0.1.2) by scripts/sync_shared.py. Edit the skill, not this file. -->
 
 Every file this skill refers to, such as `references/<file>.md` or `templates/<file>.md`, is included in full at the end of this document under a heading with that path.
 
@@ -45,7 +45,7 @@ Fill `templates/current-state.md`. For every row:
 - names become roles.
 
 Section rules:
-- **Needs and problems**: what goes wrong today and the business need behind it. Cause only as the evidence states it, otherwise `TBD` plus an open question. Findings that say what the solution should do (e.g. "incidents should be assigned automatically", "warn 30 minutes before a breach") describe the future, not today: leave them out of this file and list them at delivery for `define-future-state`. A conflict between such findings is not a current-state question either.
+- **Needs and problems**: what goes wrong today and the business need behind it. Cause only as the evidence states it, otherwise `TBD` plus an open question. Findings that say what the solution should do (e.g. "incidents should be assigned automatically", "warn 30 minutes before a breach") describe the future, not today: leave them out of this file and list them at delivery for `define-future-state`. Such a finding may still be cited for a fact about today that it states (IMT-FN-004 wants priority derived "using the department's priority matrix": the matrix exists today). A conflict between such findings is not a current-state question either.
 - **Processes**: at most one "today" Mermaid flow of up to about eight steps, followed by its element table; suggest `model-process` for anything more detailed. Capabilities appear only as the BA named them, with the capability map as evidence; a capability the BA needs but the map lacks is an open question for the business architecture team, never a new capability; if the team has no row in `stakeholders.md`, follow the workspace rule for adding a stakeholder.
 - **Baseline measures**: values only as the evidence gives them. Two sources that disagree get a row each and an open question asking which the business case should use. A measure without a figure reads Value `TBD`, cites the evidence that makes it matter (not `Assumption`), and gets an open question. Unknown periods read `TBD`.
 - **SWOT**: strengths and weaknesses restate core rows with the same evidence. Opportunities and threats, and every PESTLE and five-forces entry, need evidence about external factors; without it the section reads `No evidence yet.` and its suggested questions go into open questions. In the SWOT table, an empty quadrant is one row with Entry `No evidence yet.` and Evidence `—`.

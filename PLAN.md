@@ -5,7 +5,7 @@ A BABOK-aligned library of portable agent skills for business analysis, in the s
 - Vocabulary: [`CONTEXT.md`](CONTEXT.md). Its terms are used in this plan exactly as defined there.
 - Decisions: [`docs/adr/`](docs/adr). Each one is referenced below as (ADR-nnnn).
 
-Status: **Phase 1 skills drafted (all nine, evals pass in Claude Code); Open WebUI evals and the pilot still to run. Phase 2 structure decided (ADR 0017–0020); `prepare-for-publication` extended; `assess-current-state` drafted with evals. Next: run their evals, then grill `define-future-state`.**
+Status: **Phase 1 skills drafted (all nine, evals pass in Claude Code); Open WebUI evals and the pilot still to run. Phase 2 structure decided (ADR 0017–0020); `prepare-for-publication` extended and `assess-current-state` drafted; both pass their Claude Code evals (2026-10-14). Next: grill `define-future-state`.**
 
 ---
 
@@ -97,7 +97,7 @@ Built while Phase 1 is piloted. Structure decided first:
 | New ID classes; ID scan covers `analysis/`; missing register row reads `000` | shared `ids` (all skills) | done |
 | Create `analysis/` at setup; new register rows | `set-up-initiative` | done (v0.1.1) |
 | BRs may trace to gaps; items may trace to rules and use cases | shared `requirement-set` | done |
-| Publish-ready page and freeze for analyses; Mermaid fallback | `prepare-for-publication` | done (v0.2.1, also warns on unconfirmed evidence); evals 6–9 not yet run |
+| Publish-ready page and freeze for analyses; Mermaid fallback | `prepare-for-publication` | done (v0.2.2); evals pass in Claude Code |
 | Routes for the Phase 2 skills | `ask-ba` | `assess-current-state` done; the rest with each skill |
 | Draft BRs from gaps; FRs from business rules | `findings-to-requirements` | to do, after `define-future-state` |
 
@@ -105,7 +105,7 @@ Built while Phase 1 is piloted. Structure decided first:
 
 | # | Skill | Does | Writes | BABOK reference |
 |---|---|---|---|---|
-| 1 | `assess-current-state` (drafted, v0.1.0) | Describes how things work today and why it falls short, with SWOT, PESTLE and five forces offered when evidence supports them; capabilities only as named in the business architecture team's map (ADR-0021) | `current-state.md` | 6.1 Analyze Current State |
+| 1 | `assess-current-state` (v0.1.2, Claude Code evals pass) | Describes how things work today and why it falls short, with SWOT, PESTLE and five forces offered when evidence supports them; capabilities only as named in the business architecture team's map (ADR-0021) | `current-state.md` | 6.1 Analyze Current State |
 | 2 | `define-future-state` | Describes the target state and the gaps to close | `future-state.md` (GP) | 6.2 Define Future State |
 | 3 | `assess-risks` | Builds the risk register for the initiative or an option | `risks.md` (RK) | 6.3 Assess Risks |
 | 4 | `compare-design-options` | Lays out candidate options against the gaps and business requirements | `design-options.md` (OP) | 7.5 Define Design Options |
