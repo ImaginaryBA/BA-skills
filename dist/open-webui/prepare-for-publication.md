@@ -1,56 +1,62 @@
 ---
 name: prepare-for-publication
-description: "Turn a validated requirement set into a page ready to paste into Confluence Data Center — page properties, trimmed item blocks, open questions and a proposed AI use label — then, once the BA confirms the page is live, freeze the workspace file as published. Use when a BA is ready to send a requirement set for approval in Confluence."
+description: "Turn a validated requirement set or analysis into a page ready to paste into Confluence Data Center — page properties, trimmed items and rows, diagrams, open questions and a proposed AI use label — then, once the BA confirms the page is live, freeze the workspace file as published. Use when a BA is ready to send a requirement set, a business case or another analysis for approval in Confluence."
 ---
 
-<!-- Generated from skills/prepare-for-publication/ (v0.1.1) by scripts/sync_shared.py. Edit the skill, not this file. -->
+<!-- Generated from skills/prepare-for-publication/ (v0.2.2) by scripts/sync_shared.py. Edit the skill, not this file. -->
 
 Every file this skill refers to, such as `references/<file>.md` or `templates/<file>.md`, is included in full at the end of this document under a heading with that path.
 
 # Prepare for publication
 
-Produces the page that goes to Confluence for approval, then freezes the workspace file. After this skill, the set lives in Confluence and no skill touches it again.
+Produces the page that goes to Confluence for approval, then freezes the workspace file. After this skill, the file lives in Confluence and no skill touches it again. It handles two kinds of file: a **requirement set** (`requirements/`) and an **analysis** (`analysis/`).
 
-References (read before step 1): `references/page-format.md`, `references/requirement-set.md`, `references/ai-use.md`, `references/data-classification.md`, `references/workspace.md`.
+References (read before step 1): `references/page-format.md`, `references/requirement-set.md`, `references/analysis.md`, `references/ai-use.md`, `references/data-classification.md`, `references/workspace.md`.
 
-## 1. Check the set is ready
+## 1. Check the file is ready
 
-Read `INITIATIVE.md`, run the clearance check, and read the one set the BA names. In a chat runtime, ask for both files and wait.
+Read `INITIATIVE.md`, run the clearance check, and read the one file the BA names. In a chat runtime, ask for both files and wait. Its folder tells you whether it is a requirement set or an analysis.
 
-The set is ready when all of these hold:
-- its status is `draft` (a `published` set is already frozen: stop);
+A **requirement set** is ready when all of these hold:
+- its status is `draft`;
 - every item's status is `validated`;
 - `Validated by` and `Validated on` in the set header are filled.
 
-If any fails, list every blocker by item ID and stop. If an item traces to a BR that is not yet validated, say so as a warning; it does not block.
+An **analysis** is ready when all of these hold:
+- its status is `validated` (the BA sets it by hand; an analysis has no per-item status);
+- `Validated by` and `Validated on` in the header are filled.
 
-Done when the set passes all three conditions.
+A `published` file is already frozen: stop and say so. If any other condition fails, list every blocker (by item ID for a set) and stop.
+
+Warnings, which do not block: a set item tracing to a BR that is not yet validated; an analysis row or item whose Evidence reads `Assumption` or cites anything `(unconfirmed)`; an analysis citing IDs from another analysis that is not yet validated. List each warning by ID or row.
+
+Done when the file passes its conditions and every warning is listed.
 
 ## 2. Build the page
 
-Fill `templates/confluence-page.md` following `references/page-format.md`: title, Part 1, Part 2, open questions if any, footer. Propose the page label. Copy statements, rationale, thresholds and sources exactly as they are in the set; this skill rewords nothing.
+Fill `templates/confluence-page.md` following `references/page-format.md`, using the part for the file's kind: title, Part 1, Part 2, open questions if any, footer. Propose the page label. Copy every statement, row, field and diagram exactly as it is in the file; this skill rewords nothing.
 
-Done when every item in the set appears on the page, in class order, with its trimmed table.
+Done when every item, row and diagram in the file appears on the page, in the file's order, trimmed as the page format says.
 
 ## 3. Hand over
 
-Show the BA the page, the proposed label and the paste steps from `references/page-format.md`. The page is shown in the chat, not saved: the frozen set is the workspace record.
+Show the BA the page, the proposed label and the paste steps from `references/page-format.md`, including the diagram step when the page has a Mermaid block. The page is shown in the chat, not saved: the frozen file is the workspace record.
 
 Ask the BA to confirm the label, publish the page, and reply with its link. Wait. Change nothing in the workspace before the BA replies.
 
 Done when the BA has replied with the page link.
 
-## 4. Freeze the set
+## 4. Freeze the file
 
 Only after the BA confirms the page is live:
-- set the set header's Status and every item's Status to `published`;
+- set the header's Status to `published`, and for a requirement set also every item's Status;
 - fill `Confluence page` with the link;
 - add this skill's footer line (`references/ai-use.md`);
 - leave everything else exactly as it was, version included.
 
-Deliver the frozen set as `references/workspace.md` describes. Tell the BA that approval now happens in Confluence, that this file is a frozen copy no skill will change, and that delivery stories can be drafted from it with `requirements-to-stories`.
+Deliver the frozen file as `references/workspace.md` describes. Tell the BA that approval now happens in Confluence and that this file is a frozen copy no skill will change. For a requirement set, add that delivery stories can be drafted from it with `requirements-to-stories`. For a business case, add that the sponsor approves it in Confluence.
 
-Done when the frozen set is delivered and every item reads `published`.
+Done when the frozen file is delivered and its header reads `published`.
 
 
 ---
@@ -96,6 +102,106 @@ On publication, the Confluence page gets the label `ai-generated` if any item on
 
 ---
 
+# Included file: references/analysis.md
+
+````markdown
+# Analysis
+
+An analysis is one file in `analysis/` (ADR 0017), published later as one Confluence page (ADR 0019). File name: `<kind>.md`, or `<kind>-<slug>.md` when the initiative has more than one of that kind.
+
+| Kind | File | ID'd items |
+|---|---|---|
+| Current state (with SWOT, PESTLE, five forces as needed) | `current-state.md` | — |
+| Future state and gaps | `future-state.md` | GP |
+| Risks | `risks.md` | RK |
+| Design options | `design-options.md` | OP |
+| Business case | `business-case.md` | — (cites OP, RK, GP) |
+| Process model | `process-<slug>.md` | — |
+| Use cases and scenarios | `use-cases-<slug>.md` | UC |
+| Data model | `data-model.md` | — |
+| Business rules | `business-rules.md` | RL |
+
+## File layout
+
+1. `# <Analysis name>`, then the header table:
+
+   | Field | Value |
+   |---|---|
+   | Analysis name | <name> |
+   | Kind | <kind from the table above> |
+   | Initiative code | <CODE> |
+   | Version | 0.1 |
+   | Status | draft |
+   | Business analyst | <BA name> |
+   | Validated by | <stakeholder roles, filled by the BA> |
+   | Validated on | <YYYY-MM-DD, filled by the BA> |
+   | Confluence page | TBD |
+
+2. The sections the skill's template defines for its kind.
+3. `## Sources`, when any supplied document is cited (see below).
+4. `## Open questions`, always present (write `None.` if empty):
+
+   | # | Question | Findings involved | Ask | Answered by |
+   |---|---|---|---|---|
+   | 1 | <gap, conflict or assumption> | <evidence involved, or `Assumption`> | <stakeholder role> | — |
+
+   Never resolve a conflict or remove a question; `Answered by` stays `—` until a later skill fills it with the finding that answers it.
+5. The footer (`references/ai-use.md`).
+
+## Rows without IDs
+
+Entries that nothing traces to (SWOT entries, PESTLE factors, five-forces entries, observations, process steps, entities) are table rows. Every such table has at least these columns:
+
+| Entry | Evidence | AI use | Reviewer |
+|---|---|---|---|
+
+## Items with IDs
+
+Gaps, risks, design options, business rules and use cases are items: a `### <ID> <statement>` heading followed by an item table. Every item table ends with these fields; the skill's template puts the fields for its class above them:
+
+| Field | Value |
+|---|---|
+| Evidence | <finding IDs, document title and date, `Business need (unconfirmed)`, or `Assumption`> |
+| Traces to | <IDs or `Business need`> |
+| AI use | AI-generated / AI-assisted |
+| Reviewer | |
+| Reviewed on | |
+
+## Evidence (ADR 0020)
+
+- Every row and item cites evidence, one or more of:
+  - finding IDs; a finding with `Confirmed: no` is cited as `<ID> (unconfirmed)`;
+  - a supplied document, by title and date (e.g. `Service desk monthly report, September 2026`);
+  - `Business need (unconfirmed)`, for a statement taken from the business need in `INITIATIVE.md`.
+- A statement without evidence is written with Evidence `Assumption` and added to open questions with the role to ask.
+- When two pieces of evidence disagree, write each as its own row or item with its own evidence, and add an open question naming the conflict. Never pick one.
+- Never supply market, competitor, regulatory or financial facts from your own knowledge, and never search the web. You may suggest framework headings worth exploring and questions to ask.
+- Numbers only as the sources give them. A calculation from given figures shows its inputs and steps.
+- Likelihood, impact and priority are `TBD` until stakeholders give them.
+
+## Supplied documents
+
+- Read only what the BA supplies. Replace personal names with roles, as for elicitation notes (`references/data-classification.md`).
+- If a document holds customer or production data, do not use it: tell the BA which document and what kind of data (never the data itself), ask for a cleaned version, and carry on with the rest.
+- Never read a Confluence page outside a local-model runtime. Capability maps belong to the business architecture team (ADR 0021): never read, draft or extend one; cite it by title and date for the capabilities the BA names.
+- Every analysis citing a document has a `## Sources` section before `## Open questions`:
+
+  | Document | Date | Owner role |
+  |---|---|---|
+
+## Diagrams
+
+Diagrams are Mermaid code blocks. Each diagram is followed by a table of its elements in the rows-without-IDs format, so the content is checkable and labelled even where Mermaid does not render.
+
+## Status and changes
+
+- Status applies to the whole file: `draft`, `validated`, `published`, `approved`. Only the BA sets `validated`, by hand, after filling `Validated by` and `Validated on`; `prepare-for-publication` takes only a `validated` analysis.
+- A **draft** analysis may gain new rows, items and open questions appended at the end of their sections. Each change raises the version by 0.1. No skill rewrites or removes an existing row or item.
+- `prepare-for-publication` sets Status `published` and fills `Confluence page` once the BA confirms the page is live. From then on the file is a frozen copy, never changed.
+````
+
+---
+
 # Included file: references/data-classification.md
 
 ````markdown
@@ -127,9 +233,11 @@ Authored here, not generated from `shared/`. The page is plain markdown so that 
 
 ## Title
 
-`<CODE> <Set name>`, e.g. `IMT Incident logging and prioritisation`.
+`<CODE> <Set name or Analysis name>`, e.g. `IMT Incident logging and prioritisation`, `IMT Current state`.
 
-## Part 1: page properties
+## Requirement set
+
+### Part 1: page properties
 
 Goes inside Confluence's Page Properties macro, so Confluence can build a requirements catalogue across initiatives.
 
@@ -145,24 +253,56 @@ Goes inside Confluence's Page Properties macro, so Confluence can build a requir
 | AI use | <proposed page label> |
 | Workspace file | requirements/<set-slug>.md |
 
-## Part 2: body
+### Part 2: body
 
 1. One `## <Class name>` section per class present, in the order BR, SR, FR, NFR, TR.
 2. Per item, `### <ID> <statement>` and a trimmed table, in this order: Class · Rationale · Threshold · Priority · Source · Traces to · Reused from · AI use. Leave out Threshold and Reused from when they read `—`, and Priority while it reads `TBD`. Status and reviewer fields are never shown.
-3. `## Open questions`: only the questions whose `Answered by` reads `—`, with columns #, Question, Findings involved, Ask. Leave the section out when none remain.
+3. Open questions, as below.
 4. The footer line from `references/ai-use.md`.
+
+## Analysis
+
+### Part 1: page properties
+
+| Field | Value |
+|---|---|
+| Initiative code | <CODE> |
+| Analysis name | <Analysis name> |
+| Kind | <kind from the header> |
+| Version | <analysis version> |
+| Status | Awaiting approval |
+| Business analyst | <BA name> |
+| Validated by | <from the header> |
+| Validated on | <from the header> |
+| Approver | <business case only: the Sponsor from `INITIATIVE.md`; leave the row out for other kinds> |
+| AI use | <proposed page label> |
+| Workspace file | analysis/<file name> |
+
+### Part 2: body
+
+1. Every section between the header table and `## Open questions`, in the file's order, with its headings and text unchanged.
+2. Row tables: every column and row as in the file, except the `Reviewer` column, which is left out.
+3. Items (`### <ID> <statement>`): every field in the file's order, except `Reviewer` and `Reviewed on`. Leave out fields reading `—`; keep fields reading `TBD`, because an open likelihood, impact or figure is something the approver must see.
+4. Mermaid diagrams: the code block unchanged, then its element table.
+5. Open questions, as below.
+6. The footer line from `references/ai-use.md`.
+
+## Open questions (both kinds)
+
+`## Open questions`: only the questions whose `Answered by` reads `—`, with columns #, Question, Findings involved, Ask. Leave the section out when none remain.
 
 ## Page label
 
-Propose `ai-generated` if any item is AI-generated, otherwise `ai-assisted` (`references/ai-use.md`). The BA decides.
+Propose `ai-generated` if any item or row on the page is AI-generated, otherwise `ai-assisted` (`references/ai-use.md`). The BA decides.
 
 ## Pasting into Confluence Data Center
 
 1. Create the page with the title above.
 2. Insert the **Page Properties** macro. Inside it, use **Insert → Markup**, choose **Markdown**, and paste Part 1.
 3. Below the macro, use **Insert → Markup → Markdown** again and paste Part 2.
-4. Add the page label the BA chose.
-5. Publish the page and send it for approval.
+4. If Part 2 has a Mermaid code block: where the instance has a Mermaid macro, move the code into it; otherwise render the diagram with a tool the company allows and insert the image directly above the code block. Keep the code block and the element table either way: they are the checkable record.
+5. Add the page label the BA chose.
+6. Publish the page and send it for approval (for a business case, to the sponsor).
 ````
 
 ---
@@ -230,7 +370,7 @@ One requirement per statement. Use the initiative glossary's terms.
 - **Threshold**: the measurable condition that proves the item is met (e.g. "95% of searches return in ≤ 2 s"). Mandatory for BR and NFR: only numbers the sources give, otherwise `TBD` plus an open question. Optional for SR, FR and TR: `—` when none applies.
 - **Priority**: always `TBD` at creation; prioritisation is a stakeholder decision.
 - **Source**: finding IDs. A BR drafted from the initiative's business need may cite `Business need`.
-- **Traces to**: SR, FR, NFR and TR trace to at least one BR; an FR may also trace to the SR it satisfies. A BR traces to `Business need`.
+- **Traces to**: SR, FR, NFR and TR trace to at least one BR; an FR may also trace to the SR it satisfies. A BR traces to `Business need`, and may also trace to the gaps (`GP`) it closes. Any item may also trace to the business rules (`RL`) or use cases (`UC`) it serves.
 - **Status** values, in order: `draft`, `verified`, `validated`, `published`, `approved`, then `retired` or `superseded`. Only the BA sets `validated`, by hand, after filling `Validated by` and `Validated on` in the set header.
 
 ## Open questions
@@ -270,6 +410,7 @@ A workspace is one folder per initiative on the synced company drive. Skills rea
   elicitation/       # one file per elicitation session
   requirements/      # one file per requirement set
   stories/           # one file per story set
+  analysis/          # one file per analysis: current state, gaps, risks, options, business case, models
   decisions/         # initiative decisions
   reviews/           # quality reports, one per check run
 ```
@@ -295,10 +436,12 @@ Before working, a skill needs `INITIATIVE.md`. In an agentic runtime, read it fr
 # Included file: templates/confluence-page.md
 
 ````markdown
-**Page title:** <CODE> <Set name>
+**Page title:** <CODE> <Set name or Analysis name>
 **Proposed page label:** <ai-generated / ai-assisted>
 
-**Part 1: paste inside the Page Properties macro**
+<!-- Requirement set: use Part 1 (set) and Part 2 (set). Analysis: use Part 1 (analysis) and Part 2 (analysis). -->
+
+**Part 1 (set): paste inside the Page Properties macro**
 
 | Field | Value |
 |---|---|
@@ -312,7 +455,7 @@ Before working, a skill needs `INITIATIVE.md`. In an agentic runtime, read it fr
 | AI use | <proposed page label> |
 | Workspace file | requirements/<set-slug>.md |
 
-**Part 2: paste below the macro**
+**Part 2 (set): paste below the macro**
 
 ## <Class name>
 
@@ -326,6 +469,28 @@ Before working, a skill needs `INITIATIVE.md`. In an agentic runtime, read it fr
 | Source | <sources> |
 | Traces to | <IDs> |
 | AI use | <label> |
+
+**Part 1 (analysis): paste inside the Page Properties macro**
+
+| Field | Value |
+|---|---|
+| Initiative code | <CODE> |
+| Analysis name | <Analysis name> |
+| Kind | <kind> |
+| Version | <version> |
+| Status | Awaiting approval |
+| Business analyst | <BA name> |
+| Validated by | <roles> |
+| Validated on | <YYYY-MM-DD> |
+| Approver | <Sponsor; business case only> |
+| AI use | <proposed page label> |
+| Workspace file | analysis/<file name> |
+
+**Part 2 (analysis): paste below the macro**
+
+## <Section heading, as in the file>
+
+<section text, row tables without the Reviewer column, items without reviewer fields, Mermaid blocks with their element tables>
 
 ## Open questions
 

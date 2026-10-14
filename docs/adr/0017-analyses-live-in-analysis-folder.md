@@ -1,0 +1,7 @@
+# Analyses are workspace files in `analysis/`, one file per analysis
+
+Phase 2 adds strategy analysis and modelling: current state (with SWOT, PESTLE, five forces), future state and gaps, risks, design options, the business case, process models, use cases, data models and business rules. Each is one **analysis**: a markdown file in a new `analysis/` folder, named `<kind>.md` or `<kind>-<slug>.md` when an initiative needs more than one of a kind (e.g. `process-incident-logging.md`). We rejected separate `analysis/` and `models/` folders because the BA would have to learn which kind goes where for no gain, and one folder gives one publication rule. Workshop facilitation packs are not analyses: they are elicitation sessions and stay in `elicitation/`.
+
+An analysis follows the requirement set's shape (ADR 0007) so the same habits carry over: a header table, sections, items with metadata tables, open questions and the footer. Its lifecycle status is kept for the whole file, not per row: `draft`, `validated`, `published`, `approved`. There is no `verified` step, because no quality-check skill covers analyses yet; adding one would need a new ADR. Draft analyses are append-only like requirement sets (ADR 0014): skills add rows and items but never rewrite existing ones, and any exception needs its own ADR.
+
+The common format is `shared/analysis.md`; each skill's template adds the sections for its kind.

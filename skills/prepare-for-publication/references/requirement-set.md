@@ -60,7 +60,7 @@ One requirement per statement. Use the initiative glossary's terms.
 - **Threshold**: the measurable condition that proves the item is met (e.g. "95% of searches return in ≤ 2 s"). Mandatory for BR and NFR: only numbers the sources give, otherwise `TBD` plus an open question. Optional for SR, FR and TR: `—` when none applies.
 - **Priority**: always `TBD` at creation; prioritisation is a stakeholder decision.
 - **Source**: finding IDs. A BR drafted from the initiative's business need may cite `Business need`.
-- **Traces to**: SR, FR, NFR and TR trace to at least one BR; an FR may also trace to the SR it satisfies. A BR traces to `Business need`.
+- **Traces to**: SR, FR, NFR and TR trace to at least one BR; an FR may also trace to the SR it satisfies. A BR traces to `Business need`, and may also trace to the gaps (`GP`) it closes. Any item may also trace to the business rules (`RL`) or use cases (`UC`) it serves.
 - **Status** values, in order: `draft`, `verified`, `validated`, `published`, `approved`, then `retired` or `superseded`. Only the BA sets `validated`, by hand, after filling `Validated by` and `Validated on` in the set header.
 
 ## Open questions

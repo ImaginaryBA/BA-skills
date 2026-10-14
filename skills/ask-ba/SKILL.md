@@ -7,7 +7,7 @@ description: >-
   Use when a BA is unsure which skill to use, wants a status of their
   workspace, or asks about coverage.
 metadata:
-  version: 0.1.1
+  version: 0.1.3
   babok:
     knowledge_area: "3 Business Analysis Planning and Monitoring"
     tasks: []

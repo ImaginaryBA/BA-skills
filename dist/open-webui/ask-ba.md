@@ -3,7 +3,7 @@ name: ask-ba
 description: "Start here. Tell the BA where their initiative stands and which BA-skills skill fits their situation next, with the files to bring; or say plainly when no skill covers it. Also answers what BA-skills covers against BABOK. Use when a BA is unsure which skill to use, wants a status of their workspace, or asks about coverage."
 ---
 
-<!-- Generated from skills/ask-ba/ (v0.1.1) by scripts/sync_shared.py. Edit the skill, not this file. -->
+<!-- Generated from skills/ask-ba/ (v0.1.3) by scripts/sync_shared.py. Edit the skill, not this file. -->
 
 Every file this skill refers to, such as `references/<file>.md` or `templates/<file>.md`, is included in full at the end of this document under a heading with that path.
 
@@ -88,7 +88,7 @@ Which BA-skills skill supports each BABOK v3 task. Tasks marked "not yet" have n
 
 | Task | Skills |
 |---|---|
-| 6.1 Analyze Current State | not yet |
+| 6.1 Analyze Current State | `assess-current-state` |
 | 6.2 Define Future State | not yet |
 | 6.3 Assess Risks | not yet |
 | 6.4 Define Change Strategy | not yet |
@@ -150,11 +150,12 @@ Authored here, not generated from `shared/`. Match the BA's situation to one row
 |---|---|---|
 | Starting new work; no `INITIATIVE.md` exists | `set-up-initiative` | none |
 | The need is vague, or open questions keep piling up | `grill-ba` | `INITIATIVE.md`, `stakeholders.md`, elicitation files |
+| Needs a picture of how things work today and why it falls short (current state, SWOT, PESTLE, baselines) | `assess-current-state` | `INITIATIVE.md`, `stakeholders.md`, elicitation files, supplied documents, any current-state file |
 | About to interview or survey stakeholders | `prepare-elicitation` | `INITIATIVE.md`, `stakeholders.md`, draft requirement sets, elicitation files |
 | Has notes or a transcript from a session; or stakeholders replied to a confirmation request | `notes-to-findings` | `INITIATIVE.md`, `stakeholders.md`, the session's elicitation file, draft requirement sets |
 | Has confirmed findings, or raw notes, emails or documents, and wants requirements | `findings-to-requirements` | `INITIATIVE.md`, `stakeholders.md`, elicitation files, draft requirement sets |
 | Has draft requirements to review or verify | `check-requirement-quality` | `INITIATIVE.md`, the draft sets, `business-requirements.md`, the elicitation files they cite |
-| Has a validated set to send for approval; or the page is live and the set must be frozen | `prepare-for-publication` | `INITIATIVE.md`, the set |
+| Has a validated set or analysis (e.g. a business case) to send for approval; or the page is live and the file must be frozen | `prepare-for-publication` | `INITIATIVE.md`, the set or analysis |
 | Has validated or published requirements and needs Jira stories; or has Jira keys to record | `requirements-to-stories` | `INITIATIVE.md`, `stakeholders.md`, the set, `business-requirements.md`, the story set |
 | Wants to know what BA-skills covers | this skill, `references/coverage.md` | none |
 
@@ -183,6 +184,7 @@ A workspace is one folder per initiative on the synced company drive. Skills rea
   elicitation/       # one file per elicitation session
   requirements/      # one file per requirement set
   stories/           # one file per story set
+  analysis/          # one file per analysis: current state, gaps, risks, options, business case, models
   decisions/         # initiative decisions
   reviews/           # quality reports, one per check run
 ```

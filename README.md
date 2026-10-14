@@ -15,18 +15,19 @@ Install the skills ([INSTALL.md](INSTALL.md); Open WebUI users import the single
 | `ask-ba` | are unsure which skill fits, or want a status of your initiative |
 | `set-up-initiative` | start a new piece of analysis work |
 | `grill-ba` | have a vague need to sharpen before elicitation |
+| `assess-current-state` | need a picture of how things work today and why it falls short |
 | `prepare-elicitation` | are about to interview or survey stakeholders |
 | `notes-to-findings` | have session notes or a transcript, or stakeholders replied to a confirmation |
 | `findings-to-requirements` | want requirements from confirmed findings or raw material |
 | `check-requirement-quality` | want draft requirements reviewed and verified |
-| `prepare-for-publication` | have a validated set to send for approval in Confluence |
+| `prepare-for-publication` | have a validated requirement set or analysis to send for approval in Confluence |
 | `requirements-to-stories` | need Jira stories from validated requirements |
 
 BABOK coverage per task: [`skills/ask-ba/references/coverage.md`](skills/ask-ba/references/coverage.md).
 
 ## How it works
 
-- Each initiative lives in a **workspace**: a folder of markdown files (`INITIATIVE.md`, `stakeholders.md`, `elicitation/`, `requirements/`, `stories/`, `reviews/`, `decisions/`). See [`workspace-example/`](workspace-example/) for a complete fictional initiative.
+- Each initiative lives in a **workspace**: a folder of markdown files (`INITIATIVE.md`, `stakeholders.md`, `elicitation/`, `requirements/`, `stories/`, `reviews/`, `decisions/`, `analysis/`). See [`workspace-example/`](workspace-example/) for a complete fictional initiative.
 - Every item a skill drafts is labelled **AI-generated** or **AI-assisted**, and every interview or questionnaire tells stakeholders that AI is used.
 - Requirements become the system of record in Confluence once published; after that, no skill touches them.
 

@@ -83,6 +83,56 @@ _Avoid_: Persona, actor
 `draft` as drafted, `ready` once the BA has reviewed it, `created` once its Jira key is recorded.
 _Avoid_: Ticket, Jira requirement
 
+### Analysis
+
+**Analysis**:
+One strategy or modelling artifact (current state, future state and gaps, risks, design options, business case, process model, use cases, data model, business rules), kept as one file in `analysis/` and published as one Confluence page. Its status (draft, validated, published, approved) applies to the whole file.
+_Avoid_: Assessment, study, deliverable
+
+**Analysis kind**:
+Which of the fixed types an analysis is; decides its file name and its sections.
+
+**Evidence**:
+What an analysis row or item rests on: finding IDs, a supplied document named by title and date, or the initiative's business need. Every row and item has it. A finding not yet confirmed, and the business need, count but are marked `(unconfirmed)`.
+_Avoid_: Source (that is a requirement's field and holds findings only)
+
+**Supplied document**:
+An existing document the BA gives a skill as evidence (a process manual, a performance report, a vendor notice), listed in the analysis's sources with its owner role and date.
+_Avoid_: Attachment, reference
+
+**Baseline measure**:
+A figure describing how the current state performs today (e.g. about 5 minutes to re-key an alert), taken only from evidence. The yardstick the business case measures improvement against.
+_Avoid_: KPI, metric
+
+**Capability map**:
+The business architecture team's model of what the business can do. Owned and changed only by that team; analyses cite it as a supplied document and never add to it.
+_Avoid_: Capability model, function map
+
+**Assumption**:
+An analysis statement without evidence, marked `Assumption` and listed as an open question with the role to ask. Never presented as fact.
+
+**Gap**:
+The difference between the current state and the future state that the change must close, with an ID (e.g. `IMT-GP-003`). Business requirements may trace to it.
+
+**Risk**:
+An uncertain event or condition that would affect the initiative's value, with an ID (e.g. `IMT-RK-002`), an owner role, and likelihood and impact that stay `TBD` until stakeholders give them.
+_Avoid_: Issue (an issue has already happened)
+
+**Design option**:
+One candidate way of meeting the business requirements, with an ID (e.g. `IMT-OP-001`), the gaps it addresses and its benefits, costs and risks.
+_Avoid_: Solution (the chosen option, once delivered)
+
+**Business case**:
+The analysis that weighs the design options against the business need and recommends one, for the sponsor to approve in Confluence.
+
+**Business rule**:
+A policy, constraint or definition the business operates by, independent of any system, with an ID (e.g. `IMT-RL-004`). Requirements that enforce it trace to it.
+_Avoid_: Validation, logic
+
+**Use case**:
+A goal a story role reaches through the solution, told as a main scenario and alternative scenarios, with an ID (e.g. `IMT-UC-002`).
+_Avoid_: Scenario (one path through a use case), user journey
+
 ### Requirement lifecycle
 
 **Lifecycle status**:
