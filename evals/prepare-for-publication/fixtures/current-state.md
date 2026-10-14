@@ -50,7 +50,7 @@ flowchart LR
 | # | Question | Findings involved | Ask | Answered by |
 |---|---|---|---|---|
 | 1 | Who assigns resolver groups today, and how? | Assumption | Service Desk Lead | — |
-| 2 | Does the priority matrix cover every incident category? | IMT-FN-004 | Head of IT Operations | IMT-FN-013 |
+| 2 | Are critical monitoring alerts entered into the tool automatically or by hand? | Assumption | Service Desk Lead | IMT-FN-001 |
 
 ---
 Produced with assess-current-state v0.1.0 in Claude Code, 2026-10-14.
